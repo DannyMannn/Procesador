@@ -1,0 +1,6 @@
+[Inputs]
+reloj
+=address[5:0]=
+[Outputs]
+=salida[31:0]=
+[BiDir]

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Procesador.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ALU.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="ALU.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ALU.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="ALU.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ALU.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_VHDL" xil_pn:name="Camino.vhf"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Camino_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Camino_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Camino_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Decodificador.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="Decodificador.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Decodificador.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Decodificador.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Decodificador.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="GeneradorCiclos.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="GeneradorCiclos.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="GeneradorCiclos.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="GeneradorCiclos.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="GeneradorCiclos.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="MemoriaInstrucciones.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="MemoriaInstrucciones.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="MemoriaInstrucciones.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MemoriaInstrucciones.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="MemoriaInstrucciones.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="MemoriaRegistros.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="MemoriaRegistros.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="MemoriaRegistros.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MemoriaRegistros.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="MemoriaRegistros.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PC.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="PC.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="PC.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="PC.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="PC.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SUMADOR.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="SUMADOR.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="SUMADOR.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="SUMADOR.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="SUMADOR.xst"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1696010328" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1696010328">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1696010328" xil_pn:in_ck="7804817106828535018" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1696010328">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../ALU.vhd"/>
+      <outfile xil_pn:name="../Decodificador.vhd"/>
+      <outfile xil_pn:name="../GeneradorCiclos.vhd"/>
+      <outfile xil_pn:name="../PC.vhd"/>
+      <outfile xil_pn:name="../SUMADOR.vhd"/>
+      <outfile xil_pn:name="MemoriaInstrucciones.vhd"/>
+      <outfile xil_pn:name="MemoriaRegistros.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1696010328" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6108140531299431901" xil_pn:start_ts="1696010328">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1696010331" xil_pn:in_ck="3250776543633635" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2497726791550355237" xil_pn:start_ts="1696010328">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Camino.vhf"/>
+    </transform>
+    <transform xil_pn:end_ts="1696010331" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="3624773592893248403" xil_pn:start_ts="1696010331">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1696010331" xil_pn:in_ck="8656341701115756147" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1696010331">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../ALU.vhd"/>
+      <outfile xil_pn:name="../Decodificador.vhd"/>
+      <outfile xil_pn:name="../GeneradorCiclos.vhd"/>
+      <outfile xil_pn:name="../PC.vhd"/>
+      <outfile xil_pn:name="../SUMADOR.vhd"/>
+      <outfile xil_pn:name="Camino.vhf"/>
+      <outfile xil_pn:name="MemoriaInstrucciones.vhd"/>
+      <outfile xil_pn:name="MemoriaRegistros.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1696010337" xil_pn:in_ck="8656341701115756147" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7063273891529980246" xil_pn:start_ts="1696010331">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Camino_beh.prj"/>
+      <outfile xil_pn:name="Camino_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1696010338" xil_pn:in_ck="7070053060176491270" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1930995283769632151" xil_pn:start_ts="1696010337">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Camino_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+    </transform>
+  </transforms>
+
+</generated_project>

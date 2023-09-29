@@ -1,0 +1,4 @@
+vhdl work "../SUMADOR.vhd"
+vhdl work "MemoriaInstrucciones.vhd"
+vhdl work "../PC.vhd"
+vhdl work "Camino.vhf"

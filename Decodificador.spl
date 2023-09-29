@@ -1,0 +1,10 @@
+[Inputs]
+=instruccion[31:0]=
+[Outputs]
+=operacion[5:0]=
+=r1[4:0]=
+=r2[4:0]=
+=r3[4:0]=
+=shamt[4:0]=
+=codigo_operacion[5:0]=
+[BiDir]

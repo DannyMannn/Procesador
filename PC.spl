@@ -1,0 +1,6 @@
+[Inputs]
+clk
+=Ent[5:0]=
+[Outputs]
+=Rout[5:0]=
+[BiDir]

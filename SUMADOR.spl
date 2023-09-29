@@ -1,0 +1,5 @@
+[Inputs]
+=entrada[5:0]=
+[Outputs]
+=suma[5:0]=
+[BiDir]

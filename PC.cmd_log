@@ -1,0 +1,2 @@
+vhdtdtfi -lib work ../PC.vhd -prj Procesador -o PC.spl -module PC -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 PC.spl {C:/Users/danie/Documents/9th Semester/ArquitecturaComp/Procesador/PC.sym} 

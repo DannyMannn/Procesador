@@ -1,0 +1,12 @@
+[Inputs]
+clk
+we
+=r1[4:0]=
+=r2[4:0]=
+=r3[4:0]=
+=dato[31:0]=
+=escritura[1:0]=
+[Outputs]
+=dato1[31:0]=
+=dato2[31:0]=
+[BiDir]
