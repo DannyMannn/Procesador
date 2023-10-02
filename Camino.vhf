@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Camino.vhf
--- /___/   /\     Timestamp : 09/29/2023 11:58:50
+-- /___/   /\     Timestamp : 10/01/2023 18:14:33
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl "C:/Users/danie/Documents/9th Semester/ArquitecturaComp/Procesador/Camino.vhf" -w "C:/Users/danie/Documents/9th Semester/ArquitecturaComp/Procesador/Camino.sch"
+--Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl C:/Users/danie/Documents/GitHub/Procesador/Camino.vhf -w C:/Users/danie/Documents/GitHub/Procesador/Camino.sch
 --Design Name: Camino
 --Device: spartan6
 --Purpose:

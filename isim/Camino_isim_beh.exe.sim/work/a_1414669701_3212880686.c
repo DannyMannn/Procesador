@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/danie/Documents/9th Semester/ArquitecturaComp/Procesador/Camino.vhf";
+static const char *ng0 = "C:/Users/danie/Documents/GitHub/Procesador/Camino.vhf";
 
 
 

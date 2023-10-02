@@ -65,6 +65,7 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
@@ -72,6 +73,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1696010328" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1696010328">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1696010328" xil_pn:in_ck="7804817106828535018" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1696010328">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -88,7 +90,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1696010331" xil_pn:in_ck="3250776543633635" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2497726791550355237" xil_pn:start_ts="1696010328">
+    <transform xil_pn:end_ts="1696205674" xil_pn:in_ck="3250776543633635" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2497726791550355237" xil_pn:start_ts="1696205671">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Camino.vhf"/>
@@ -97,7 +99,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1696010331" xil_pn:in_ck="8656341701115756147" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1696010331">
+    <transform xil_pn:end_ts="1696205674" xil_pn:in_ck="8656341701115756147" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1696205674">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="../ALU.vhd"/>
@@ -109,22 +111,22 @@
       <outfile xil_pn:name="MemoriaInstrucciones.vhd"/>
       <outfile xil_pn:name="MemoriaRegistros.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1696010337" xil_pn:in_ck="8656341701115756147" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7063273891529980246" xil_pn:start_ts="1696010331">
+    <transform xil_pn:end_ts="1696205681" xil_pn:in_ck="8656341701115756147" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7063273891529980246" xil_pn:start_ts="1696205674">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Camino_beh.prj"/>
       <outfile xil_pn:name="Camino_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1696010338" xil_pn:in_ck="7070053060176491270" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1930995283769632151" xil_pn:start_ts="1696010337">
+    <transform xil_pn:end_ts="1696205681" xil_pn:in_ck="7070053060176491270" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1930995283769632151" xil_pn:start_ts="1696205681">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Camino_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
     </transform>
   </transforms>
 
