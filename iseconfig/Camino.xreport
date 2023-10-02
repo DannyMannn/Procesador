@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2023-10-01T18:13:05</DateModified>
+  <DateModified>2023-10-01T18:26:23</DateModified>
   <ModuleName>Camino</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/danie/Documents/GitHub/Procesador/iseconfig/Camino.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/danie/Documents/GitHub/Procesador</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/danie/Documents/GitHub/Procesador\</ImplementationReportsDirectory>
   <DateInitialized>2023-10-01T18:13:04</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

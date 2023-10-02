@@ -78,13 +78,17 @@
     <transform xil_pn:end_ts="1696010328" xil_pn:in_ck="7804817106828535018" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1696010328">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="../ALU.vhd"/>
-      <outfile xil_pn:name="../Decodificador.vhd"/>
-      <outfile xil_pn:name="../GeneradorCiclos.vhd"/>
-      <outfile xil_pn:name="../PC.vhd"/>
-      <outfile xil_pn:name="../SUMADOR.vhd"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="ALU.vhd"/>
+      <outfile xil_pn:name="Decodificador.vhd"/>
+      <outfile xil_pn:name="GeneradorCiclos.vhd"/>
       <outfile xil_pn:name="MemoriaInstrucciones.vhd"/>
       <outfile xil_pn:name="MemoriaRegistros.vhd"/>
+      <outfile xil_pn:name="PC.vhd"/>
+      <outfile xil_pn:name="SUMADOR.vhd"/>
     </transform>
     <transform xil_pn:end_ts="1696010328" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6108140531299431901" xil_pn:start_ts="1696010328">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -102,18 +106,26 @@
     <transform xil_pn:end_ts="1696205674" xil_pn:in_ck="8656341701115756147" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1696205674">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="../ALU.vhd"/>
-      <outfile xil_pn:name="../Decodificador.vhd"/>
-      <outfile xil_pn:name="../GeneradorCiclos.vhd"/>
-      <outfile xil_pn:name="../PC.vhd"/>
-      <outfile xil_pn:name="../SUMADOR.vhd"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="ALU.vhd"/>
       <outfile xil_pn:name="Camino.vhf"/>
+      <outfile xil_pn:name="Decodificador.vhd"/>
+      <outfile xil_pn:name="GeneradorCiclos.vhd"/>
       <outfile xil_pn:name="MemoriaInstrucciones.vhd"/>
       <outfile xil_pn:name="MemoriaRegistros.vhd"/>
+      <outfile xil_pn:name="PC.vhd"/>
+      <outfile xil_pn:name="SUMADOR.vhd"/>
     </transform>
     <transform xil_pn:end_ts="1696205681" xil_pn:in_ck="8656341701115756147" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7063273891529980246" xil_pn:start_ts="1696205674">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="Camino_beh.prj"/>
       <outfile xil_pn:name="Camino_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -124,6 +136,7 @@
     <transform xil_pn:end_ts="1696205681" xil_pn:in_ck="7070053060176491270" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1930995283769632151" xil_pn:start_ts="1696205681">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Camino_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
