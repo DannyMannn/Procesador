@@ -28,12 +28,12 @@ begin
 			dato2 <= RAM(conv_integer(r2));
 		end if;
 	else
-		--if we = '1' then
-			--dato1 <= RAM(conv_integer(r1));
-			--to2 <= RAM(conv_integer(r2));
-		--else
-		RAM(conv_integer(r3)) <= dato;
-		--end if;
+		if we = '1' then
+			dato1 <= RAM(conv_integer(r1));
+			dato2 <= RAM(conv_integer(r2));
+		else
+			RAM(conv_integer(r3)) <= dato;
+		end if;
 	end if;
 end process;
 

@@ -1,5 +1,5 @@
-set -tmpdir "C:/Users/danie/Documents/9th Semester/ArquitecturaComp/Procesador/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/danie/Documents/9th Semester/ArquitecturaComp/Procesador/xst"
+set -tmpdir "C:/Users/danie/Documents/GitHub/Procesador/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/danie/Documents/GitHub/Procesador/xst"
 run -compileonly yes
 -p xc6slx45-3-csg324
 -top MemoriaRegistros

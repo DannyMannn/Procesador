@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/danie/Documents/GitHub/SUMADOR.vhd";
+static const char *ng0 = "C:/Users/danie/Documents/GitHub/Procesador/SUMADOR.vhd";
 extern char *IEEE_P_3620187407;
 
 char *ieee_p_3620187407_sub_767668596_3965413181(char *, char *, char *, char *, char *, char *);
@@ -52,8 +52,8 @@ LAB0:    xsi_set_current_line(20, ng0);
 
 LAB3:    t2 = (t0 + 1032U);
     t3 = *((char **)t2);
-    t2 = (t0 + 4296U);
-    t4 = (t0 + 4348);
+    t2 = (t0 + 4348U);
+    t4 = (t0 + 4400);
     t7 = (t6 + 0U);
     t8 = (t7 + 0U);
     *((int *)t8) = 0;

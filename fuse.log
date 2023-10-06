@@ -3,11 +3,15 @@ ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/danie/Documents/GitHub/Procesador/../SUMADOR.vhd" into library work
+Parsing VHDL file "C:/Users/danie/Documents/GitHub/Procesador/SUMADOR.vhd" into library work
+Parsing VHDL file "C:/Users/danie/Documents/GitHub/Procesador/PC.vhd" into library work
+Parsing VHDL file "C:/Users/danie/Documents/GitHub/Procesador/MemoriaRegistros.vhd" into library work
 Parsing VHDL file "C:/Users/danie/Documents/GitHub/Procesador/MemoriaInstrucciones.vhd" into library work
-Parsing VHDL file "C:/Users/danie/Documents/GitHub/Procesador/../PC.vhd" into library work
+Parsing VHDL file "C:/Users/danie/Documents/GitHub/Procesador/Decodificador.vhd" into library work
+Parsing VHDL file "C:/Users/danie/Documents/GitHub/Procesador/ALU.vhd" into library work
 Parsing VHDL file "C:/Users/danie/Documents/GitHub/Procesador/Camino.vhf" into library work
 Starting static elaboration
+WARNING:HDLCompiler:794 - "C:/Users/danie/Documents/GitHub/Procesador/ALU.vhd" Line 17: Statement might not cover all choices ; 'others' clause recommended
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
@@ -18,10 +22,13 @@ Compiling package std_logic_unsigned
 Compiling architecture behavioral of entity SUMADOR [sumador_default]
 Compiling architecture behavioral of entity PC [pc_default]
 Compiling architecture behavioral of entity MemoriaInstrucciones [memoriainstrucciones_default]
+Compiling architecture behavioral of entity Decodificador [decodificador_default]
+Compiling architecture behavioral of entity MemoriaRegistros [memoriaregistros_default]
+Compiling architecture behavioral of entity ALU [alu_default]
 Compiling architecture behavioral of entity camino
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 13 VHDL Units
+Compiled 19 VHDL Units
 Built simulation executable C:/Users/danie/Documents/GitHub/Procesador/Camino_isim_beh.exe
-Fuse Memory Usage: 51504 KB
-Fuse CPU Usage: 999 ms
+Fuse Memory Usage: 52080 KB
+Fuse CPU Usage: 1015 ms
