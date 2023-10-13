@@ -1,0 +1,409 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.37 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.37 secs
+ 
+--> Reading design: Camino.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Camino.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Camino"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : Camino
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\danie\Documents\GitHub\Procesador\SUMADOR.vhd" into library work
+Parsing entity <SUMADOR>.
+Parsing architecture <Behavioral> of entity <sumador>.
+Parsing VHDL file "C:\Users\danie\Documents\GitHub\Procesador\PC.vhd" into library work
+Parsing entity <PC>.
+Parsing architecture <Behavioral> of entity <pc>.
+Parsing VHDL file "C:\Users\danie\Documents\GitHub\Procesador\MemoriaRegistros.vhd" into library work
+Parsing entity <MemoriaRegistros>.
+Parsing architecture <Behavioral> of entity <memoriaregistros>.
+Parsing VHDL file "C:\Users\danie\Documents\GitHub\Procesador\MemoriaInstrucciones.vhd" into library work
+Parsing entity <MemoriaInstrucciones>.
+Parsing architecture <Behavioral> of entity <memoriainstrucciones>.
+Parsing VHDL file "C:\Users\danie\Documents\GitHub\Procesador\Decodificador.vhd" into library work
+Parsing entity <Decodificador>.
+Parsing architecture <Behavioral> of entity <decodificador>.
+Parsing VHDL file "C:\Users\danie\Documents\GitHub\Procesador\ALU.vhd" into library work
+Parsing entity <ALU>.
+Parsing architecture <Behavioral> of entity <alu>.
+Parsing VHDL file "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" into library work
+Parsing entity <Camino>.
+Parsing architecture <BEHAVIORAL> of entity <camino>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <Camino> (architecture <BEHAVIORAL>) from library <work>.
+
+Elaborating entity <SUMADOR> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <PC> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\danie\Documents\GitHub\Procesador\PC.vhd" Line 22: temp should be on the sensitivity list of the process
+
+Elaborating entity <MemoriaInstrucciones> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Decodificador> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <MemoriaRegistros> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\danie\Documents\GitHub\Procesador\MemoriaRegistros.vhd" Line 32: ram should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\danie\Documents\GitHub\Procesador\MemoriaRegistros.vhd" Line 33: ram should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\danie\Documents\GitHub\Procesador\MemoriaRegistros.vhd" Line 35: dato should be on the sensitivity list of the process
+
+Elaborating entity <ALU> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:794 - "C:\Users\danie\Documents\GitHub\Procesador\ALU.vhd" Line 17: Statement might not cover all choices ; 'others' clause recommended
+WARNING:HDLCompiler:634 - "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" Line 45: Net <XLXI_6_dato_openSignal[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" Line 46: Net <XLXI_6_escritura_openSignal[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" Line 47: Net <XLXI_6_we_openSignal> does not have a driver.
+WARNING:Xst:2972 - "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" line 105. All outputs of instance <XLXI_4> of block <MemoriaInstrucciones> are unconnected in block <Camino>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" line 110. All outputs of instance <XLXI_5> of block <Decodificador> are unconnected in block <Camino>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" line 119. All outputs of instance <XLXI_6> of block <MemoriaRegistros> are unconnected in block <Camino>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" line 130. All outputs of instance <XLXI_7> of block <ALU> are unconnected in block <Camino>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Camino>.
+    Related source file is "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf".
+INFO:Xst:3210 - "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" line 110: Output port <operacion> of the instance <XLXI_5> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" line 110: Output port <shamt> of the instance <XLXI_5> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" line 130: Output port <resultado> of the instance <XLXI_7> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <XLXI_6_dato_openSignal> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <XLXI_6_escritura_openSignal> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <XLXI_6_we_openSignal> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <Camino> synthesized.
+
+Synthesizing Unit <SUMADOR>.
+    Related source file is "C:\Users\danie\Documents\GitHub\Procesador\SUMADOR.vhd".
+    Found 6-bit adder for signal <suma> created at line 20.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <SUMADOR> synthesized.
+
+Synthesizing Unit <PC>.
+    Related source file is "C:\Users\danie\Documents\GitHub\Procesador\PC.vhd".
+    Found 6-bit register for signal <temp>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <PC> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 6-bit adder                                           : 1
+# Registers                                            : 1
+ 6-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <Camino>.
+The following registers are absorbed into counter <XLXI_2/temp>: 1 register on signal <XLXI_2/temp>.
+Unit <Camino> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Camino> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Camino, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 6
+ Flip-Flops                                            : 6
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Camino.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 6
+#      INV                         : 1
+#      LUT2                        : 1
+#      LUT3                        : 1
+#      LUT4                        : 1
+#      LUT5                        : 1
+#      LUT6                        : 1
+# FlipFlops/Latches                : 6
+#      FD                          : 6
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 6
+#      OBUF                        : 6
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               6  out of  54576     0%  
+ Number of Slice LUTs:                    6  out of  27288     0%  
+    Number used as Logic:                 6  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     12
+   Number with an unused Flip Flop:       6  out of     12    50%  
+   Number with an unused LUT:             6  out of     12    50%  
+   Number of fully used LUT-FF pairs:     0  out of     12     0%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                           9
+ Number of bonded IOBs:                   7  out of    218     3%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+XLXN_11                            | BUFGP                  | 6     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.115ns (Maximum Frequency: 472.813MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 4.799ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'XLXN_11'
+  Clock period: 2.115ns (frequency: 472.813MHz)
+  Total number of paths / destination ports: 21 / 6
+-------------------------------------------------------------------------
+Delay:               2.115ns (Levels of Logic = 1)
+  Source:            XLXI_2/temp_0 (FF)
+  Destination:       XLXI_2/temp_0 (FF)
+  Source Clock:      XLXN_11 rising
+  Destination Clock: XLXN_11 rising
+
+  Data Path: XLXI_2/temp_0 to XLXI_2/temp_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.447   0.744  XLXI_2/temp_0 (XLXI_2/temp_0)
+     INV:I->O              2   0.206   0.616  Result<0>1_INV_0 (Result<0>)
+     FD:D                      0.102          XLXI_2/temp_0
+    ----------------------------------------
+    Total                      2.115ns (0.755ns logic, 1.360ns route)
+                                       (35.7% logic, 64.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'XLXN_11'
+  Total number of paths / destination ports: 21 / 6
+-------------------------------------------------------------------------
+Offset:              4.799ns (Levels of Logic = 2)
+  Source:            XLXI_2/temp_4 (FF)
+  Destination:       XLXN_3<5> (PAD)
+  Source Clock:      XLXN_11 rising
+
+  Data Path: XLXI_2/temp_4 to XLXN_3<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.961  XLXI_2/temp_4 (XLXI_2/temp_4)
+     LUT5:I0->O            2   0.203   0.616  Result<4>1 (Result<4>)
+     OBUF:I->O                 2.571          XLXN_3_4_OBUF (XLXN_3<4>)
+    ----------------------------------------
+    Total                      4.799ns (3.221ns logic, 1.578ns route)
+                                       (67.1% logic, 32.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock XLXN_11
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+XLXN_11        |    2.115|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 10.17 secs
+ 
+--> 
+
+Total memory usage is 236900 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

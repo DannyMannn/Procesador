@@ -11,11 +11,15 @@ architecture Behavioral of ExtensorSigno is
 begin
 
 
-PROCESS(inmediato_in) BEGIN
+--PROCESS(inmediato_in) BEGIN
+	--signal inmediato_aux <= x"00000000";
 	
-	--inmediato_out <= inmediato_in & '0000000000000000';
+	--for i in 0 to 15 do
+		--inmediato_aux(i) <= inmediato_in(i);
+	
+	--inmediato_out <= inmediato_aux
 
-END PROCESS;
+--END PROCESS;
 
 end Behavioral;
 

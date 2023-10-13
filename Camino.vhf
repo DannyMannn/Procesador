@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Camino.vhf
--- /___/   /\     Timestamp : 10/04/2023 10:09:32
+-- /___/   /\     Timestamp : 10/11/2023 10:33:52
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -26,22 +26,23 @@ library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
 entity Camino is
-   port ( XLXN_11 : in    std_logic; 
-          XLXN_12 : in    std_logic; 
-          XLXN_44 : in    std_logic; 
-          XLXN_3  : out   std_logic_vector (5 downto 0));
+   port ( clk_memIns : in    std_logic; 
+          clk_memreg : in    std_logic; 
+          clk_pc     : in    std_logic; 
+          alu_result : out   std_logic_vector (31 downto 0); 
+          suma       : out   std_logic_vector (5 downto 0));
 end Camino;
 
 architecture BEHAVIORAL of Camino is
-   signal XLXN_1                      : std_logic_vector (5 downto 0);
-   signal XLXN_17                     : std_logic_vector (31 downto 0);
-   signal XLXN_18                     : std_logic_vector (4 downto 0);
-   signal XLXN_19                     : std_logic_vector (4 downto 0);
-   signal XLXN_20                     : std_logic_vector (4 downto 0);
-   signal XLXN_41                     : std_logic_vector (31 downto 0);
-   signal XLXN_42                     : std_logic_vector (31 downto 0);
-   signal XLXN_43                     : std_logic_vector (5 downto 0);
-   signal XLXN_3_DUMMY                : std_logic_vector (5 downto 0);
+   signal codop                       : std_logic_vector (5 downto 0);
+   signal dato1_alu                   : std_logic_vector (31 downto 0);
+   signal dato2_alu                   : std_logic_vector (31 downto 0);
+   signal reg1                        : std_logic_vector (4 downto 0);
+   signal reg2                        : std_logic_vector (4 downto 0);
+   signal reg3                        : std_logic_vector (4 downto 0);
+   signal rout                        : std_logic_vector (5 downto 0);
+   signal salida_meminst              : std_logic_vector (31 downto 0);
+   signal suma_DUMMY                  : std_logic_vector (5 downto 0);
    signal XLXI_6_dato_openSignal      : std_logic_vector (31 downto 0);
    signal XLXI_6_escritura_openSignal : std_logic_vector (1 downto 0);
    signal XLXI_6_we_openSignal        : std_logic;
@@ -92,46 +93,46 @@ architecture BEHAVIORAL of Camino is
    end component;
    
 begin
-   XLXN_3(5 downto 0) <= XLXN_3_DUMMY(5 downto 0);
+   suma(5 downto 0) <= suma_DUMMY(5 downto 0);
    XLXI_1 : SUMADOR
-      port map (entrada(5 downto 0)=>XLXN_1(5 downto 0),
-                suma(5 downto 0)=>XLXN_3_DUMMY(5 downto 0));
+      port map (entrada(5 downto 0)=>rout(5 downto 0),
+                suma(5 downto 0)=>suma_DUMMY(5 downto 0));
    
    XLXI_2 : PC
-      port map (clk=>XLXN_11,
-                Ent(5 downto 0)=>XLXN_3_DUMMY(5 downto 0),
-                Rout(5 downto 0)=>XLXN_1(5 downto 0));
+      port map (clk=>clk_pc,
+                Ent(5 downto 0)=>suma_DUMMY(5 downto 0),
+                Rout(5 downto 0)=>rout(5 downto 0));
    
    XLXI_4 : MemoriaInstrucciones
-      port map (address(5 downto 0)=>XLXN_1(5 downto 0),
-                reloj=>XLXN_12,
-                salida(31 downto 0)=>XLXN_17(31 downto 0));
+      port map (address(5 downto 0)=>rout(5 downto 0),
+                reloj=>clk_memIns,
+                salida(31 downto 0)=>salida_meminst(31 downto 0));
    
    XLXI_5 : Decodificador
-      port map (instruccion(31 downto 0)=>XLXN_17(31 downto 0),
-                codigo_operacion(5 downto 0)=>XLXN_43(5 downto 0),
+      port map (instruccion(31 downto 0)=>salida_meminst(31 downto 0),
+                codigo_operacion(5 downto 0)=>codop(5 downto 0),
                 operacion=>open,
-                r1(4 downto 0)=>XLXN_18(4 downto 0),
-                r2(4 downto 0)=>XLXN_19(4 downto 0),
-                r3(4 downto 0)=>XLXN_20(4 downto 0),
+                r1(4 downto 0)=>reg1(4 downto 0),
+                r2(4 downto 0)=>reg2(4 downto 0),
+                r3(4 downto 0)=>reg3(4 downto 0),
                 shamt=>open);
    
    XLXI_6 : MemoriaRegistros
-      port map (clk=>XLXN_44,
+      port map (clk=>clk_memreg,
                 dato(31 downto 0)=>XLXI_6_dato_openSignal(31 downto 0),
                 escritura(1 downto 0)=>XLXI_6_escritura_openSignal(1 downto 0),
-                r1(4 downto 0)=>XLXN_18(4 downto 0),
-                r2(4 downto 0)=>XLXN_19(4 downto 0),
-                r3(4 downto 0)=>XLXN_20(4 downto 0),
+                r1(4 downto 0)=>reg1(4 downto 0),
+                r2(4 downto 0)=>reg2(4 downto 0),
+                r3(4 downto 0)=>reg3(4 downto 0),
                 we=>XLXI_6_we_openSignal,
-                dato1(31 downto 0)=>XLXN_41(31 downto 0),
-                dato2(31 downto 0)=>XLXN_42(31 downto 0));
+                dato1(31 downto 0)=>dato1_alu(31 downto 0),
+                dato2(31 downto 0)=>dato2_alu(31 downto 0));
    
    XLXI_7 : ALU
-      port map (operacion(5 downto 0)=>XLXN_43(5 downto 0),
-                registro_a(31 downto 0)=>XLXN_41(31 downto 0),
-                registro_b(31 downto 0)=>XLXN_42(31 downto 0),
-                resultado=>open);
+      port map (operacion(5 downto 0)=>codop(5 downto 0),
+                registro_a(31 downto 0)=>dato1_alu(31 downto 0),
+                registro_b(31 downto 0)=>dato2_alu(31 downto 0),
+                resultado(31 downto 0)=>alu_result(31 downto 0));
    
 end BEHAVIORAL;
 
