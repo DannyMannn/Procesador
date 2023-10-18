@@ -1,0 +1,7 @@
+[Inputs]
+control
+=busB_in[31:0]=
+=inmediato_in[31:0]=
+[Outputs]
+=alu_src[31:0]=
+[BiDir]

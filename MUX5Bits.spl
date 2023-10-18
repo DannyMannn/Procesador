@@ -1,0 +1,7 @@
+[Inputs]
+control
+=rt_in[4:0]=
+=rd_in[4:0]=
+[Outputs]
+=registro_destino[4:0]=
+[BiDir]

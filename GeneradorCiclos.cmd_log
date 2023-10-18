@@ -1,2 +1,12 @@
 vhdtdtfi -lib work ../GeneradorCiclos.vhd -prj Procesador -o GeneradorCiclos.spl -module GeneradorCiclos -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
 spl2sym -intstyle ise -family spartan6 GeneradorCiclos.spl {C:/Users/danie/Documents/9th Semester/ArquitecturaComp/Procesador/GeneradorCiclos.sym} 
+vhdtdtfi -lib work GeneradorCiclos.vhd -prj Procesador -o GeneradorCiclos.spl -module GeneradorCiclos -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 GeneradorCiclos.spl /home/ise/Documents/Procesador/GeneradorCiclos.sym 
+vhdtdtfi -lib work GeneradorCiclos.vhd -prj Procesador -o GeneradorCiclos.spl -module GeneradorCiclos -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 GeneradorCiclos.spl /home/ise/Documents/Procesador/GeneradorCiclos.sym 
+vhdtdtfi -lib work GeneradorCiclos.vhd -prj Procesador -o GeneradorCiclos.spl -module GeneradorCiclos -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 GeneradorCiclos.spl /home/ise/Documents/Procesador/GeneradorCiclos.sym 
+vhdtdtfi -lib work GeneradorCiclos.vhd -prj Procesador -o GeneradorCiclos.spl -module GeneradorCiclos -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 -w GeneradorCiclos.spl /home/ise/Documents/Procesador/GeneradorCiclos.sym 
+vhdtdtfi -lib work GeneradorCiclos.vhd -prj Procesador -o GeneradorCiclos.spl -module GeneradorCiclos -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 -w GeneradorCiclos.spl /home/ise/Documents/Procesador/GeneradorCiclos.sym 

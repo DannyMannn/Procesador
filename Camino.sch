@@ -7,8 +7,6 @@
     </attr>
     <netlist>
         <signal name="rout(5:0)" />
-        <signal name="clk_pc" />
-        <signal name="clk_memIns" />
         <signal name="suma(5:0)" />
         <signal name="salida_meminst(31:0)" />
         <signal name="reg1(4:0)" />
@@ -17,12 +15,11 @@
         <signal name="dato1_alu(31:0)" />
         <signal name="dato2_alu(31:0)" />
         <signal name="codop(5:0)" />
-        <signal name="clk_memreg" />
         <signal name="alu_result(31:0)" />
-        <port polarity="Input" name="clk_pc" />
-        <port polarity="Input" name="clk_memIns" />
+        <signal name="XLXN_1" />
+        <signal name="XLXN_3" />
+        <signal name="XLXN_4" />
         <port polarity="Output" name="suma(5:0)" />
-        <port polarity="Input" name="clk_memreg" />
         <port polarity="Output" name="alu_result(31:0)" />
         <blockdef name="SUMADOR">
             <timestamp>2023-9-29T17:43:42</timestamp>
@@ -100,13 +97,23 @@
             <rect width="64" x="400" y="-172" height="24" />
             <line x2="464" y1="-160" y2="-160" x1="400" />
         </blockdef>
-        <block symbolname="PC" name="XLXI_2">
-            <blockpin signalname="clk_pc" name="clk" />
+        <blockdef name="GeneradorCiclos">
+            <timestamp>2023-10-13T15:49:9</timestamp>
+            <rect width="256" x="64" y="-320" height="320" />
+            <line x2="0" y1="-288" y2="-288" x1="64" />
+            <line x2="384" y1="-288" y2="-288" x1="320" />
+            <line x2="384" y1="-224" y2="-224" x1="320" />
+            <line x2="384" y1="-160" y2="-160" x1="320" />
+            <line x2="384" y1="-96" y2="-96" x1="320" />
+            <line x2="384" y1="-32" y2="-32" x1="320" />
+        </blockdef>
+        <block symbolname="PC" name="entrada_pc">
+            <blockpin signalname="XLXN_1" name="clk" />
             <blockpin signalname="suma(5:0)" name="Ent(5:0)" />
             <blockpin signalname="rout(5:0)" name="Rout(5:0)" />
         </block>
         <block symbolname="MemoriaInstrucciones" name="XLXI_4">
-            <blockpin signalname="clk_memIns" name="reloj" />
+            <blockpin signalname="XLXN_3" name="reloj" />
             <blockpin signalname="rout(5:0)" name="address(5:0)" />
             <blockpin signalname="salida_meminst(31:0)" name="salida(31:0)" />
         </block>
@@ -124,7 +131,7 @@
             <blockpin signalname="codop(5:0)" name="codigo_operacion(5:0)" />
         </block>
         <block symbolname="MemoriaRegistros" name="XLXI_6">
-            <blockpin signalname="clk_memreg" name="clk" />
+            <blockpin signalname="XLXN_4" name="clk" />
             <blockpin name="we" />
             <blockpin signalname="reg1(4:0)" name="r1(4:0)" />
             <blockpin signalname="reg2(4:0)" name="r2(4:0)" />
@@ -140,6 +147,14 @@
             <blockpin signalname="codop(5:0)" name="operacion(5:0)" />
             <blockpin signalname="alu_result(31:0)" name="resultado(31:0)" />
         </block>
+        <block symbolname="GeneradorCiclos" name="XLXI_10">
+            <blockpin name="clk" />
+            <blockpin signalname="XLXN_1" name="A" />
+            <blockpin signalname="XLXN_3" name="B" />
+            <blockpin signalname="XLXN_4" name="C" />
+            <blockpin name="D" />
+            <blockpin name="E" />
+        </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
         <branch name="rout(5:0)">
@@ -148,18 +163,12 @@
             <wire x2="1040" y1="1136" y2="1136" x1="912" />
             <wire x2="912" y1="1136" y2="1456" x1="912" />
         </branch>
-        <instance x="384" y="1552" name="XLXI_2" orien="R0">
+        <instance x="384" y="1552" name="entrada_pc" orien="R0">
         </instance>
         <instance x="1024" y="1488" name="XLXI_4" orien="R0">
         </instance>
         <instance x="1040" y="1168" name="XLXI_1" orien="R0">
         </instance>
-        <branch name="clk_pc">
-            <wire x2="384" y1="1456" y2="1456" x1="352" />
-        </branch>
-        <branch name="clk_memIns">
-            <wire x2="1024" y1="1392" y2="1392" x1="992" />
-        </branch>
         <branch name="suma(5:0)">
             <wire x2="384" y1="1520" y2="1520" x1="368" />
             <wire x2="368" y1="1520" y2="1616" x1="368" />
@@ -185,8 +194,6 @@
         <branch name="reg3(4:0)">
             <wire x2="2144" y1="1584" y2="1584" x1="2064" />
         </branch>
-        <iomarker fontsize="28" x="352" y="1456" name="clk_pc" orien="R180" />
-        <iomarker fontsize="28" x="992" y="1392" name="clk_memIns" orien="R180" />
         <iomarker fontsize="28" x="1632" y="1136" name="suma(5:0)" orien="R0" />
         <instance x="2672" y="1632" name="XLXI_7" orien="R0">
         </instance>
@@ -207,13 +214,28 @@
             <wire x2="2576" y1="1600" y2="1808" x1="2576" />
             <wire x2="2672" y1="1600" y2="1600" x1="2576" />
         </branch>
-        <branch name="clk_memreg">
-            <wire x2="2144" y1="1328" y2="1328" x1="2112" />
-        </branch>
-        <iomarker fontsize="28" x="2112" y="1328" name="clk_memreg" orien="R180" />
         <branch name="alu_result(31:0)">
             <wire x2="3168" y1="1472" y2="1472" x1="3136" />
         </branch>
         <iomarker fontsize="28" x="3168" y="1472" name="alu_result(31:0)" orien="R0" />
+        <branch name="XLXN_1">
+            <wire x2="368" y1="1360" y2="1456" x1="368" />
+            <wire x2="384" y1="1456" y2="1456" x1="368" />
+            <wire x2="816" y1="1360" y2="1360" x1="368" />
+            <wire x2="816" y1="864" y2="864" x1="736" />
+            <wire x2="816" y1="864" y2="1360" x1="816" />
+        </branch>
+        <branch name="XLXN_3">
+            <wire x2="1008" y1="928" y2="928" x1="736" />
+            <wire x2="1008" y1="928" y2="1392" x1="1008" />
+            <wire x2="1024" y1="1392" y2="1392" x1="1008" />
+        </branch>
+        <branch name="XLXN_4">
+            <wire x2="2128" y1="992" y2="992" x1="736" />
+            <wire x2="2128" y1="992" y2="1328" x1="2128" />
+            <wire x2="2144" y1="1328" y2="1328" x1="2128" />
+        </branch>
+        <instance x="352" y="1152" name="XLXI_10" orien="R0">
+        </instance>
     </sheet>
 </drawing>

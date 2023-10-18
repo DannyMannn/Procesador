@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0x7708f090 */
+/* This file is designed for use with ISim build 0xfbc00daa */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,10 +21,10 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/danie/Documents/GitHub/Procesador/SUMADOR.vhd";
+static const char *ng0 = "/home/ise/Documents/Procesador/SUMADOR.vhd";
 extern char *IEEE_P_3620187407;
 
-char *ieee_p_3620187407_sub_767668596_3965413181(char *, char *, char *, char *, char *, char *);
+char *ieee_p_3620187407_sub_1496620905533649268_3965413181(char *, char *, char *, char *, char *, char *);
 
 
 static void work_a_1003314168_3212880686_p_0(char *t0)
@@ -52,8 +52,8 @@ LAB0:    xsi_set_current_line(20, ng0);
 
 LAB3:    t2 = (t0 + 1032U);
     t3 = *((char **)t2);
-    t2 = (t0 + 4348U);
-    t4 = (t0 + 4400);
+    t2 = (t0 + 4240U);
+    t4 = (t0 + 4292);
     t7 = (t6 + 0U);
     t8 = (t7 + 0U);
     *((int *)t8) = 0;
@@ -66,7 +66,7 @@ LAB3:    t2 = (t0 + 1032U);
     t10 = (t10 + 1);
     t8 = (t7 + 12U);
     *((unsigned int *)t8) = t10;
-    t8 = ieee_p_3620187407_sub_767668596_3965413181(IEEE_P_3620187407, t1, t3, t2, t4, t6);
+    t8 = ieee_p_3620187407_sub_1496620905533649268_3965413181(IEEE_P_3620187407, t1, t3, t2, t4, t6);
     t11 = (t1 + 12U);
     t10 = *((unsigned int *)t11);
     t12 = (1U * t10);
@@ -74,7 +74,7 @@ LAB3:    t2 = (t0 + 1032U);
     if (t13 == 1)
         goto LAB5;
 
-LAB6:    t14 = (t0 + 2752);
+LAB6:    t14 = (t0 + 2744);
     t15 = (t14 + 56U);
     t16 = *((char **)t15);
     t17 = (t16 + 56U);
@@ -82,7 +82,7 @@ LAB6:    t14 = (t0 + 2752);
     memcpy(t18, t8, 6U);
     xsi_driver_first_trans_fast_port(t14);
 
-LAB2:    t19 = (t0 + 2672);
+LAB2:    t19 = (t0 + 2664);
     *((int *)t19) = 1;
 
 LAB1:    return;

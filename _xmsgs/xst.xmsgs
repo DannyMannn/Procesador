@@ -5,59 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:\Users\danie\Documents\GitHub\Procesador\PC.vhd" Line 22: <arg fmt="%s" index="1">temp</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:\Users\danie\Documents\GitHub\Procesador\MemoriaRegistros.vhd" Line 32: <arg fmt="%s" index="1">ram</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:\Users\danie\Documents\GitHub\Procesador\MemoriaRegistros.vhd" Line 33: <arg fmt="%s" index="1">ram</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"C:\Users\danie\Documents\GitHub\Procesador\MemoriaRegistros.vhd" Line 35: <arg fmt="%s" index="1">dato</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="794" delta="new" >"C:\Users\danie\Documents\GitHub\Procesador\ALU.vhd" Line 17: Statement might not cover all choices ; &apos;others&apos; clause recommended
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" Line 45: Net &lt;<arg fmt="%s" index="1">XLXI_6_dato_openSignal[31]</arg>&gt; does not have a driver.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" Line 46: Net &lt;<arg fmt="%s" index="1">XLXI_6_escritura_openSignal[1]</arg>&gt; does not have a driver.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf" Line 47: Net &lt;<arg fmt="%s" index="1">XLXI_6_we_openSignal</arg>&gt; does not have a driver.
-</msg>
-
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf</arg>&quot; line <arg fmt="%d" index="2">105</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">XLXI_4</arg>&gt; of block &lt;<arg fmt="%s" index="4">MemoriaInstrucciones</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">Camino</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf</arg>&quot; line <arg fmt="%d" index="2">110</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">XLXI_5</arg>&gt; of block &lt;<arg fmt="%s" index="4">Decodificador</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">Camino</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf</arg>&quot; line <arg fmt="%d" index="2">119</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">XLXI_6</arg>&gt; of block &lt;<arg fmt="%s" index="4">MemoriaRegistros</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">Camino</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf</arg>&quot; line <arg fmt="%d" index="2">130</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">XLXI_7</arg>&gt; of block &lt;<arg fmt="%s" index="4">ALU</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">Camino</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf</arg>&quot; line <arg fmt="%s" index="2">110</arg>: Output port &lt;<arg fmt="%s" index="3">operacion</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_5</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf</arg>&quot; line <arg fmt="%s" index="2">110</arg>: Output port &lt;<arg fmt="%s" index="3">shamt</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_5</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\danie\Documents\GitHub\Procesador\Camino.vhf</arg>&quot; line <arg fmt="%s" index="2">130</arg>: Output port &lt;<arg fmt="%s" index="3">resultado</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_7</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">XLXI_6_dato_openSignal</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">XLXI_6_escritura_openSignal</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">XLXI_6_we_openSignal</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
 </messages>
 

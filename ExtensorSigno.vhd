@@ -7,19 +7,19 @@ entity ExtensorSigno is
 end ExtensorSigno;
 
 architecture Behavioral of ExtensorSigno is
+	signal inmediato_aux: STD_LOGIC_VECTOR (31 downto 0) := x"00000000";
 
 begin
 
-
---PROCESS(inmediato_in) BEGIN
-	--signal inmediato_aux <= x"00000000";
+PROCESS(inmediato_in, inmediato_aux) BEGIN
 	
-	--for i in 0 to 15 do
-		--inmediato_aux(i) <= inmediato_in(i);
+	for i in 0 to 15 loop
+		inmediato_aux(i) <= inmediato_in(i);
+	end loop;
 	
-	--inmediato_out <= inmediato_aux
+	inmediato_out <= inmediato_aux;
 
---END PROCESS;
+END PROCESS;
 
 end Behavioral;
 

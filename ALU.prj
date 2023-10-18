@@ -1,1 +1,1 @@
-vhdl work "../ALU.vhd"
+vhdl work "ALU.vhd"

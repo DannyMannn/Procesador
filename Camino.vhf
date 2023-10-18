@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Camino.vhf
--- /___/   /\     Timestamp : 10/11/2023 10:33:52
+-- /___/   /\     Timestamp : 10/13/2023 16:19:37
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl C:/Users/danie/Documents/GitHub/Procesador/Camino.vhf -w C:/Users/danie/Documents/GitHub/Procesador/Camino.sch
+--Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl /home/ise/Documents/Procesador/Camino.vhf -w /home/ise/Documents/Procesador/Camino.sch
 --Design Name: Camino
 --Device: spartan6
 --Purpose:
@@ -26,10 +26,7 @@ library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
 entity Camino is
-   port ( clk_memIns : in    std_logic; 
-          clk_memreg : in    std_logic; 
-          clk_pc     : in    std_logic; 
-          alu_result : out   std_logic_vector (31 downto 0); 
+   port ( alu_result : out   std_logic_vector (31 downto 0); 
           suma       : out   std_logic_vector (5 downto 0));
 end Camino;
 
@@ -42,19 +39,23 @@ architecture BEHAVIORAL of Camino is
    signal reg3                        : std_logic_vector (4 downto 0);
    signal rout                        : std_logic_vector (5 downto 0);
    signal salida_meminst              : std_logic_vector (31 downto 0);
+   signal XLXN_1                      : std_logic;
+   signal XLXN_3                      : std_logic;
+   signal XLXN_4                      : std_logic;
    signal suma_DUMMY                  : std_logic_vector (5 downto 0);
    signal XLXI_6_dato_openSignal      : std_logic_vector (31 downto 0);
    signal XLXI_6_escritura_openSignal : std_logic_vector (1 downto 0);
    signal XLXI_6_we_openSignal        : std_logic;
-   component SUMADOR
-      port ( entrada : in    std_logic_vector (5 downto 0); 
-             suma    : out   std_logic_vector (5 downto 0));
-   end component;
-   
+   signal XLXI_10_clk_openSignal      : std_logic;
    component PC
       port ( clk  : in    std_logic; 
              Ent  : in    std_logic_vector (5 downto 0); 
              Rout : out   std_logic_vector (5 downto 0));
+   end component;
+   
+   component SUMADOR
+      port ( entrada : in    std_logic_vector (5 downto 0); 
+             suma    : out   std_logic_vector (5 downto 0));
    end component;
    
    component MemoriaInstrucciones
@@ -92,20 +93,29 @@ architecture BEHAVIORAL of Camino is
              resultado  : out   std_logic_vector (31 downto 0));
    end component;
    
+   component GeneradorCiclos
+      port ( clk : in    std_logic; 
+             A   : out   std_logic; 
+             B   : out   std_logic; 
+             C   : out   std_logic; 
+             D   : out   std_logic; 
+             E   : out   std_logic);
+   end component;
+   
 begin
    suma(5 downto 0) <= suma_DUMMY(5 downto 0);
+   entrada_pc : PC
+      port map (clk=>XLXN_1,
+                Ent(5 downto 0)=>suma_DUMMY(5 downto 0),
+                Rout(5 downto 0)=>rout(5 downto 0));
+   
    XLXI_1 : SUMADOR
       port map (entrada(5 downto 0)=>rout(5 downto 0),
                 suma(5 downto 0)=>suma_DUMMY(5 downto 0));
    
-   XLXI_2 : PC
-      port map (clk=>clk_pc,
-                Ent(5 downto 0)=>suma_DUMMY(5 downto 0),
-                Rout(5 downto 0)=>rout(5 downto 0));
-   
    XLXI_4 : MemoriaInstrucciones
       port map (address(5 downto 0)=>rout(5 downto 0),
-                reloj=>clk_memIns,
+                reloj=>XLXN_3,
                 salida(31 downto 0)=>salida_meminst(31 downto 0));
    
    XLXI_5 : Decodificador
@@ -118,7 +128,7 @@ begin
                 shamt=>open);
    
    XLXI_6 : MemoriaRegistros
-      port map (clk=>clk_memreg,
+      port map (clk=>XLXN_4,
                 dato(31 downto 0)=>XLXI_6_dato_openSignal(31 downto 0),
                 escritura(1 downto 0)=>XLXI_6_escritura_openSignal(1 downto 0),
                 r1(4 downto 0)=>reg1(4 downto 0),
@@ -133,6 +143,14 @@ begin
                 registro_a(31 downto 0)=>dato1_alu(31 downto 0),
                 registro_b(31 downto 0)=>dato2_alu(31 downto 0),
                 resultado(31 downto 0)=>alu_result(31 downto 0));
+   
+   XLXI_10 : GeneradorCiclos
+      port map (clk=>XLXI_10_clk_openSignal,
+                A=>XLXN_1,
+                B=>XLXN_3,
+                C=>XLXN_4,
+                D=>open,
+                E=>open);
    
 end BEHAVIORAL;
 

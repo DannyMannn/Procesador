@@ -1,0 +1,5 @@
+[Inputs]
+=inmediato_in[15:0]=
+[Outputs]
+=inmediato_out[31:0]=
+[BiDir]

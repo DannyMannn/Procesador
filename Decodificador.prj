@@ -1,1 +1,1 @@
-vhdl work "../Decodificador.vhd"
+vhdl work "Decodificador.vhd"
