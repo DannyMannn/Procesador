@@ -1,0 +1,8 @@
+vhdl work "SUMADOR.vhd"
+vhdl work "PC.vhd"
+vhdl work "MemoriaRegistros.vhd"
+vhdl work "MemoriaInstrucciones.vhd"
+vhdl work "GeneradorCiclos.vhd"
+vhdl work "Decodificador.vhd"
+vhdl work "ALU.vhd"
+vhdl work "Camino.vhf"

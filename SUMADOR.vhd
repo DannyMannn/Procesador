@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity SUMADOR is
 	Port (
-		--clks : in STD_LOGIC;
+		clk : in STD_LOGIC;
 	   entrada : in STD_LOGIC_VECTOR (5 downto 0) := "000000";
 		suma : out STD_LOGIC_VECTOR (5 downto 0) := "000000"
 	);
@@ -15,10 +15,10 @@ architecture Behavioral of SUMADOR is
 
 begin
 
-	--process (clks) begin
-		--if (clks'event and clks='1') then
-	suma <= entrada + "000001";
-		--end if;
-	--end process;
+	process (clk) begin
+		if (clk'event and clk='1') then
+			suma <= entrada + "000001";
+		end if;
+	end process;
 end Behavioral;
 

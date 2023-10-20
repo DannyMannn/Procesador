@@ -28,8 +28,11 @@
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="ALU.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ALU.xst"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ALU_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ALU_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_VHDL" xil_pn:name="Camino.vhf"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Camino_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Camino_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Camino_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Decodificador.prj"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="Decodificador.spl"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Decodificador.stx"/>
@@ -46,9 +49,7 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="GeneradorCiclos.stx"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="GeneradorCiclos.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="GeneradorCiclos.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="GeneradorCiclos_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="GeneradorCiclos_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="GeneradorCiclos_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="MUX32Bits.prj"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="MUX32Bits.spl"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="MUX32Bits.stx"/>
@@ -94,14 +95,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1697639817" xil_pn:in_ck="7580621204281198957" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1697639817">
+    <transform xil_pn:end_ts="1697777049" xil_pn:in_ck="-6483206673073576397" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1697777049">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ALU.vhd"/>
+      <outfile xil_pn:name="ALU_CTRL.vhd"/>
       <outfile xil_pn:name="Decodificador.vhd"/>
       <outfile xil_pn:name="ExtensorSigno.vhd"/>
       <outfile xil_pn:name="GeneradorCiclos.vhd"/>
@@ -112,11 +110,11 @@
       <outfile xil_pn:name="PC.vhd"/>
       <outfile xil_pn:name="SUMADOR.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1697640008" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7091520881622400912" xil_pn:start_ts="1697640008">
+    <transform xil_pn:end_ts="1697776799" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6108140531299431901" xil_pn:start_ts="1697776799">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1697640013" xil_pn:in_ck="3250776543633635" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3054585115791853934" xil_pn:start_ts="1697640008">
+    <transform xil_pn:end_ts="1697777056" xil_pn:in_ck="3250776543633635" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2497726791550355237" xil_pn:start_ts="1697777049">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Camino.vhf"/>
@@ -125,15 +123,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1697639817" xil_pn:in_ck="-2771756406511614314" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1697639817">
+    <transform xil_pn:end_ts="1697777056" xil_pn:in_ck="-2444685274415508772" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1697777056">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ALU.vhd"/>
+      <outfile xil_pn:name="ALU_CTRL.vhd"/>
       <outfile xil_pn:name="Camino.vhf"/>
       <outfile xil_pn:name="Decodificador.vhd"/>
       <outfile xil_pn:name="ExtensorSigno.vhd"/>
@@ -145,28 +139,22 @@
       <outfile xil_pn:name="PC.vhd"/>
       <outfile xil_pn:name="SUMADOR.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1697640020" xil_pn:in_ck="-2771756406511614314" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="731965381434562426" xil_pn:start_ts="1697640013">
+    <transform xil_pn:end_ts="1697777075" xil_pn:in_ck="-2444685274415508772" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7063273891529980246" xil_pn:start_ts="1697777056">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="GeneradorCiclos_beh.prj"/>
-      <outfile xil_pn:name="GeneradorCiclos_isim_beh.exe"/>
+      <outfile xil_pn:name="Camino_beh.prj"/>
+      <outfile xil_pn:name="Camino_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1697640021" xil_pn:in_ck="-4500192363150696516" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2103411601316944743" xil_pn:start_ts="1697640020">
+    <transform xil_pn:end_ts="1697777076" xil_pn:in_ck="-4500192363150696516" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1930995283769632151" xil_pn:start_ts="1697777075">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="GeneradorCiclos_isim_beh.wdb"/>
+      <outfile xil_pn:name="Camino_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>

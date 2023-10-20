@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="GeneradorCiclos">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2023-10-13T15:49:9</timestamp>
+    <timestamp>2023-10-20T4:27:5</timestamp>
     <pin polarity="Input" x="0" y="-288" name="clk" />
     <pin polarity="Output" x="384" y="-288" name="A" />
     <pin polarity="Output" x="384" y="-224" name="B" />

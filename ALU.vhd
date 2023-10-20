@@ -19,7 +19,7 @@ begin
 
 process(registro_a, registro_b, codigo_operacion, operacion) begin
 	case operacion is
-		when "00001" =>
+		when "000001" => -- TIPO R
 		
 			case codigo_operacion is
 				 when "000001" =>
@@ -28,17 +28,23 @@ process(registro_a, registro_b, codigo_operacion, operacion) begin
 					  resultado <= registro_a - registro_b;
 				 when "000011" =>
 					  resultado <= registro_a AND registro_b;
-				 when "00100" =>
+				 when "000100" =>
 					  resultado <= registro_a OR registro_b;
 				 when "000101" =>
 					  resultado <= NOT registro_b;
 				 when "000110" =>
 					  resultado <= NOT registro_b + 1;
+				 when others =>
+					  resultado <= x"00000000";
 			end case;
 			
-		when "00010" =>
+		when "000010" => -- TIPO I
+			
 		
-		when "00011" =>
+		when "000011" => -- TIPO J
+		
+		when others =>
+			resultado <= x"00000000";
 	end case;
 end process;
 				

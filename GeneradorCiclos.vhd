@@ -37,48 +37,23 @@ begin
 				estado_siguiente <= E1;
 		
 			WHEN E1 =>
+				A <= '0';
 				B <= '1';
 				C <= '0';
 				D <= '0';
-				E <= '0';
-				A <= '0';
+            E <= '0';
 				estado_siguiente <= E2;
 
 			WHEN E2 =>
-				C <= '1';
-				D <= '0';
-				E <= '0';
 				A <= '0';
-				B <= '0';
+            B <= '0';
+				C <= '1';
+				D <= '1';
+				E <= '0';
 				estado_siguiente <= E0;
-
---			WHEN E3 =>
---				E <= '1';
---				A <= '0';
---				B <= '0';
---				C <= '0';
---				D <= '0';
---				estado_siguiente <= E4;
---			
---			WHEN E4 =>
---				C <= '1';
---				A <= '0';
---				B <= '0';
---				D <= '0';
---				E <= '0';
---				estado_siguiente <= E5;
---	
---			WHEN E5 =>
---				D <= '1';
---				A <= '0';
---				B <= '0';
---				C <= '0';
---				E <= '0';
---				estado_siguiente <= E0;
 				
 		END CASE;
 	END PROCESS;
 				
 
 end Behavioral;
-

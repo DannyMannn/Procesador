@@ -14,20 +14,23 @@
         <signal name="reg3(4:0)" />
         <signal name="dato1_alu(31:0)" />
         <signal name="dato2_alu(31:0)" />
-        <signal name="codop(5:0)" />
         <signal name="alu_result(31:0)" />
         <signal name="XLXN_1" />
         <signal name="XLXN_3" />
-        <signal name="XLXN_4" />
+        <signal name="XLXN_6" />
+        <signal name="XLXN_7" />
+        <signal name="XLXN_8(5:0)" />
+        <signal name="XLXN_9(5:0)" />
         <port polarity="Output" name="suma(5:0)" />
         <port polarity="Output" name="alu_result(31:0)" />
         <blockdef name="SUMADOR">
-            <timestamp>2023-9-29T17:43:42</timestamp>
-            <rect width="256" x="64" y="-64" height="64" />
+            <timestamp>2023-10-20T4:25:10</timestamp>
+            <line x2="0" y1="32" y2="32" x1="64" />
             <rect width="64" x="0" y="-44" height="24" />
             <line x2="0" y1="-32" y2="-32" x1="64" />
             <rect width="64" x="320" y="-44" height="24" />
             <line x2="384" y1="-32" y2="-32" x1="320" />
+            <rect width="256" x="64" y="-64" height="128" />
         </blockdef>
         <blockdef name="PC">
             <timestamp>2023-9-29T17:43:26</timestamp>
@@ -48,8 +51,11 @@
             <line x2="384" y1="-96" y2="-96" x1="320" />
         </blockdef>
         <blockdef name="Decodificador">
-            <timestamp>2023-10-2T19:52:53</timestamp>
-            <rect width="416" x="64" y="-384" height="384" />
+            <timestamp>2023-10-18T14:6:47</timestamp>
+            <rect width="64" x="480" y="20" height="24" />
+            <line x2="544" y1="32" y2="32" x1="480" />
+            <rect width="64" x="480" y="84" height="24" />
+            <line x2="544" y1="96" y2="96" x1="480" />
             <rect width="64" x="0" y="-364" height="24" />
             <line x2="0" y1="-352" y2="-352" x1="64" />
             <rect width="64" x="480" y="-364" height="24" />
@@ -64,6 +70,7 @@
             <line x2="544" y1="-96" y2="-96" x1="480" />
             <rect width="64" x="480" y="-44" height="24" />
             <line x2="544" y1="-32" y2="-32" x1="480" />
+            <rect width="416" x="64" y="-384" height="512" />
         </blockdef>
         <blockdef name="MemoriaRegistros">
             <timestamp>2023-10-4T16:3:51</timestamp>
@@ -86,8 +93,9 @@
             <line x2="384" y1="-32" y2="-32" x1="320" />
         </blockdef>
         <blockdef name="ALU">
-            <timestamp>2023-10-2T19:52:53</timestamp>
-            <rect width="336" x="64" y="-192" height="192" />
+            <timestamp>2023-10-20T4:42:14</timestamp>
+            <rect width="64" x="0" y="20" height="24" />
+            <line x2="0" y1="32" y2="32" x1="64" />
             <rect width="64" x="0" y="-172" height="24" />
             <line x2="0" y1="-160" y2="-160" x1="64" />
             <rect width="64" x="0" y="-108" height="24" />
@@ -96,9 +104,10 @@
             <line x2="0" y1="-32" y2="-32" x1="64" />
             <rect width="64" x="400" y="-172" height="24" />
             <line x2="464" y1="-160" y2="-160" x1="400" />
+            <rect width="336" x="64" y="-192" height="256" />
         </blockdef>
         <blockdef name="GeneradorCiclos">
-            <timestamp>2023-10-13T15:49:9</timestamp>
+            <timestamp>2023-10-20T4:27:5</timestamp>
             <rect width="256" x="64" y="-320" height="320" />
             <line x2="0" y1="-288" y2="-288" x1="64" />
             <line x2="384" y1="-288" y2="-288" x1="320" />
@@ -120,18 +129,21 @@
         <block symbolname="SUMADOR" name="XLXI_1">
             <blockpin signalname="rout(5:0)" name="entrada(5:0)" />
             <blockpin signalname="suma(5:0)" name="suma(5:0)" />
+            <blockpin signalname="XLXN_6" name="clk" />
         </block>
         <block symbolname="Decodificador" name="XLXI_5">
             <blockpin signalname="salida_meminst(31:0)" name="instruccion(31:0)" />
-            <blockpin name="operacion(5:0)" />
+            <blockpin signalname="XLXN_8(5:0)" name="operacion(5:0)" />
             <blockpin signalname="reg1(4:0)" name="r1(4:0)" />
             <blockpin signalname="reg2(4:0)" name="r2(4:0)" />
             <blockpin signalname="reg3(4:0)" name="r3(4:0)" />
             <blockpin name="shamt(4:0)" />
-            <blockpin signalname="codop(5:0)" name="codigo_operacion(5:0)" />
+            <blockpin name="inmediato(15:0)" />
+            <blockpin name="direccion(25:0)" />
+            <blockpin signalname="XLXN_9(5:0)" name="codigo_operacion(5:0)" />
         </block>
         <block symbolname="MemoriaRegistros" name="XLXI_6">
-            <blockpin signalname="XLXN_4" name="clk" />
+            <blockpin signalname="XLXN_7" name="clk" />
             <blockpin name="we" />
             <blockpin signalname="reg1(4:0)" name="r1(4:0)" />
             <blockpin signalname="reg2(4:0)" name="r2(4:0)" />
@@ -144,15 +156,16 @@
         <block symbolname="ALU" name="XLXI_7">
             <blockpin signalname="dato1_alu(31:0)" name="registro_a(31:0)" />
             <blockpin signalname="dato2_alu(31:0)" name="registro_b(31:0)" />
-            <blockpin signalname="codop(5:0)" name="operacion(5:0)" />
+            <blockpin signalname="XLXN_8(5:0)" name="operacion(5:0)" />
             <blockpin signalname="alu_result(31:0)" name="resultado(31:0)" />
+            <blockpin signalname="XLXN_9(5:0)" name="codigo_operacion(5:0)" />
         </block>
         <block symbolname="GeneradorCiclos" name="XLXI_10">
             <blockpin name="clk" />
             <blockpin signalname="XLXN_1" name="A" />
             <blockpin signalname="XLXN_3" name="B" />
-            <blockpin signalname="XLXN_4" name="C" />
-            <blockpin name="D" />
+            <blockpin signalname="XLXN_6" name="C" />
+            <blockpin signalname="XLXN_7" name="D" />
             <blockpin name="E" />
         </block>
     </netlist>
@@ -172,8 +185,7 @@
         <branch name="suma(5:0)">
             <wire x2="384" y1="1520" y2="1520" x1="368" />
             <wire x2="368" y1="1520" y2="1616" x1="368" />
-            <wire x2="1408" y1="1616" y2="1616" x1="368" />
-            <wire x2="1504" y1="1616" y2="1616" x1="1408" />
+            <wire x2="1504" y1="1616" y2="1616" x1="368" />
             <wire x2="1504" y1="1136" y2="1136" x1="1424" />
             <wire x2="1504" y1="1136" y2="1616" x1="1504" />
             <wire x2="1632" y1="1136" y2="1136" x1="1504" />
@@ -207,13 +219,6 @@
             <wire x2="2592" y1="1536" y2="1712" x1="2592" />
             <wire x2="2672" y1="1536" y2="1536" x1="2592" />
         </branch>
-        <branch name="codop(5:0)">
-            <wire x2="2128" y1="1712" y2="1712" x1="2064" />
-            <wire x2="2128" y1="1712" y2="1808" x1="2128" />
-            <wire x2="2576" y1="1808" y2="1808" x1="2128" />
-            <wire x2="2576" y1="1600" y2="1808" x1="2576" />
-            <wire x2="2672" y1="1600" y2="1600" x1="2576" />
-        </branch>
         <branch name="alu_result(31:0)">
             <wire x2="3168" y1="1472" y2="1472" x1="3136" />
         </branch>
@@ -230,12 +235,31 @@
             <wire x2="1008" y1="928" y2="1392" x1="1008" />
             <wire x2="1024" y1="1392" y2="1392" x1="1008" />
         </branch>
-        <branch name="XLXN_4">
-            <wire x2="2128" y1="992" y2="992" x1="736" />
-            <wire x2="2128" y1="992" y2="1328" x1="2128" />
-            <wire x2="2144" y1="1328" y2="1328" x1="2128" />
-        </branch>
         <instance x="352" y="1152" name="XLXI_10" orien="R0">
         </instance>
+        <branch name="XLXN_6">
+            <wire x2="880" y1="992" y2="992" x1="736" />
+            <wire x2="880" y1="992" y2="1200" x1="880" />
+            <wire x2="1040" y1="1200" y2="1200" x1="880" />
+        </branch>
+        <branch name="XLXN_7">
+            <wire x2="1440" y1="1056" y2="1056" x1="736" />
+            <wire x2="1440" y1="1056" y2="1328" x1="1440" />
+            <wire x2="2144" y1="1328" y2="1328" x1="1440" />
+        </branch>
+        <branch name="XLXN_8(5:0)">
+            <wire x2="2128" y1="1392" y2="1392" x1="2064" />
+            <wire x2="2128" y1="1392" y2="1808" x1="2128" />
+            <wire x2="2576" y1="1808" y2="1808" x1="2128" />
+            <wire x2="2576" y1="1600" y2="1808" x1="2576" />
+            <wire x2="2672" y1="1600" y2="1600" x1="2576" />
+        </branch>
+        <branch name="XLXN_9(5:0)">
+            <wire x2="2112" y1="1712" y2="1712" x1="2064" />
+            <wire x2="2112" y1="1712" y2="1760" x1="2112" />
+            <wire x2="2608" y1="1760" y2="1760" x1="2112" />
+            <wire x2="2608" y1="1664" y2="1760" x1="2608" />
+            <wire x2="2672" y1="1664" y2="1664" x1="2608" />
+        </branch>
     </sheet>
 </drawing>

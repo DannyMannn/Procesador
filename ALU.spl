@@ -1,6 +1,7 @@
 [Inputs]
 =registro_a[31:0]=
 =registro_b[31:0]=
+=codigo_operacion[5:0]=
 =operacion[5:0]=
 [Outputs]
 =resultado[31:0]=

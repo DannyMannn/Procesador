@@ -1,2 +1,4 @@
 vhdtdtfi -lib work ../SUMADOR.vhd -prj Procesador -o SUMADOR.spl -module SUMADOR -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
 spl2sym -intstyle ise -family spartan6 SUMADOR.spl {C:/Users/danie/Documents/9th Semester/ArquitecturaComp/Procesador/SUMADOR.sym} 
+vhdtdtfi -lib work SUMADOR.vhd -prj Procesador -o SUMADOR.spl -module SUMADOR -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 -w SUMADOR.spl /home/ise/Documents/Procesador/SUMADOR.sym 

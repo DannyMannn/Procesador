@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/Documents/Procesador/GeneradorCiclos_isim_beh.exe" -prj "/home/ise/Documents/Procesador/GeneradorCiclos_beh.prj" "work.GeneradorCiclos" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/Documents/Procesador/Camino_isim_beh.exe" -prj "/home/ise/Documents/Procesador/Camino_beh.prj" "work.Camino" 

@@ -5,14 +5,14 @@ Parameter TMPDIR set to /home/ise/Documents/Procesador/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.30 secs
+Total CPU time to Xst completion: 0.44 secs
  
 --> 
 Parameter xsthdpdir set to /home/ise/Documents/Procesador/xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.31 secs
+Total CPU time to Xst completion: 0.44 secs
  
 --> 
 Reading design: ALU.prj
@@ -47,13 +47,13 @@ Parsing entity <ALU>.
 Parsing architecture <Behavioral> of entity <alu>.
 
 
-Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 21.41 secs
+Total REAL time to Xst completion: 33.00 secs
+Total CPU time to Xst completion: 32.85 secs
  
 --> 
 
 
-Total memory usage is 397820 kilobytes
+Total memory usage is 397812 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
