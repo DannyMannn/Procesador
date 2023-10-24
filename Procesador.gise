@@ -60,6 +60,11 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="MUX5Bits.stx"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MUX5Bits.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="MUX5Bits.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="MemDatos.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="MemDatos.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="MemDatos.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MemDatos.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="MemDatos.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="MemoriaInstrucciones.prj"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="MemoriaInstrucciones.spl"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="MemoriaInstrucciones.stx"/>
@@ -98,6 +103,9 @@
     <transform xil_pn:end_ts="1697777049" xil_pn:in_ck="-6483206673073576397" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1697777049">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="ALU.vhd"/>
       <outfile xil_pn:name="ALU_CTRL.vhd"/>
       <outfile xil_pn:name="Decodificador.vhd"/>
@@ -126,6 +134,7 @@
     <transform xil_pn:end_ts="1697777056" xil_pn:in_ck="-2444685274415508772" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1697777056">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="ALU.vhd"/>
       <outfile xil_pn:name="ALU_CTRL.vhd"/>
       <outfile xil_pn:name="Camino.vhf"/>
@@ -142,6 +151,7 @@
     <transform xil_pn:end_ts="1697777075" xil_pn:in_ck="-2444685274415508772" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7063273891529980246" xil_pn:start_ts="1697777056">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Camino_beh.prj"/>
@@ -154,6 +164,7 @@
     <transform xil_pn:end_ts="1697777076" xil_pn:in_ck="-4500192363150696516" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1930995283769632151" xil_pn:start_ts="1697777075">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Camino_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
