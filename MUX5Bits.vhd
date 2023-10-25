@@ -15,9 +15,9 @@ begin
 process(rt_in, rd_in, control) BEGIN
 
 	IF(control='0') THEN
-		registro_destino <= rt_in;
-	ELSE
 		registro_destino <= rd_in;
+	ELSE
+		registro_destino <= rt_in;
 	END IF;
 		
 		
