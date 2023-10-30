@@ -20,57 +20,57 @@ architecture Behavioral of ControlPrincipal is
 begin
     
     process (clk, operacion) begin
-        case estado_presente
+        case estado_presente is
             when E0 =>
-                reg_destino <= 1;
-                branch <= 0;
-                mem_write <= 0;
-                mem_read <= 0;
-                mem_to_reg <= 0;
-                alu_src <= 0;
+                reg_destino <= '1';
+                branch <= '0';
+                mem_write <= '0';
+                mem_read <= '0';
+                mem_to_reg <= '0';
+                alu_src <= '0';
                 estado_siguiente <= E1;
             when E1 =>
-                reg_destino <= 0;
-                branch <= 0;
-                mem_write <= 0;
-                mem_read <= 0;
-                mem_to_reg <= 0;
+                reg_destino <= '0';
+                branch <= '0';
+                mem_write <= '0';
+                mem_read <= '0';
+                mem_to_reg <= '0';
                 if (operacion = "000001") then
-                    alu_src <= 0;
+                    alu_src <= '0';
                 else
-                    alu_src <= 1;
+                    alu_src <= '1';
                 end if;
                 estado_siguiente <= E2;
             when E2 =>
-                reg_destino <= 0;
-                branch <= 0;
-                mem_read <= 0;
-                mem_to_reg <= 0;
+                reg_destino <= '0';
+                branch <= '0';
+                mem_read <= '0';
+                mem_to_reg <= '0';
                 if (operacion = "000101") then
-                    mem_write <= 1;
-                    mem_read <= 0;
+                    mem_write <= '1';
+                    mem_read <= '0';
                 else 
                     if (operacion = "000110") then
-                        mem_read <= 1;
-                        mem_write <= 0;
+                        mem_read <= '1';
+                        mem_write <= '0';
                     end if;
                 end if;
                 estado_siguiente <= E3;
             when E3 =>
-                reg_destino <= 0;
-                branch <= 0;
-                mem_write <= 0;
-                mem_read <= 0;
-                mem_to_reg <= 1;
-                alu_src <= 0;
+                reg_destino <= '0';
+                branch <= '0';
+                mem_write <= '0';
+                mem_read <= '0';
+                mem_to_reg <= '1';
+                alu_src <= '0';
                 estado_siguiente <= E4;
             when E4 =>
-                reg_destino <= 0;
-                branch <= 1;
-                mem_write <= 0;
-                mem_read <= 0;
-                mem_to_reg <= 0;
-                alu_src <= 0;
+                reg_destino <= '0';
+                branch <= '1';
+                mem_write <= '0';
+                mem_read <= '0';
+                mem_to_reg <= '0';
+                alu_src <= '0';
                 estado_siguiente <= E0;
         end case;
         

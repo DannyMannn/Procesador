@@ -2,7 +2,7 @@ set -tmpdir "/home/ise/Documents/Procesador/xst/projnav.tmp"
 set -xsthdpdir "/home/ise/Documents/Procesador/xst"
 run -compileonly yes
 -p xc6slx45-3-csg324
--top ControlPrincipal
+-top MUX32_MD
 -opt_mode Speed
 -opt_level 1
 -power NO
@@ -47,4 +47,4 @@ run -compileonly yes
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
--ifn ControlPrincipal.prj
+-ifn MUX32_MD.prj

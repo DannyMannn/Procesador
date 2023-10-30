@@ -58,6 +58,9 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="MUX32Bits.stx"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MUX32Bits.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="MUX32Bits.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="MUX32_MD.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="MUX32_MD.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="MUX32_MD.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="MUX5Bits.prj"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="MUX5Bits.spl"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="MUX5Bits.stx"/>

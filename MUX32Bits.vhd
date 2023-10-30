@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-
+-- MUX DE LA ALU
 entity MUX32Bits is
     Port ( busB_in : in  STD_LOGIC_VECTOR (31 downto 0);
            inmediato_in : in  STD_LOGIC_VECTOR (31 downto 0);
