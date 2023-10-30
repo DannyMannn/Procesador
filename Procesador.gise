@@ -33,6 +33,9 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Camino_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Camino_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Camino_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ControlPrincipal.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ControlPrincipal.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ControlPrincipal.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Decodificador.prj"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="Decodificador.spl"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Decodificador.stx"/>
