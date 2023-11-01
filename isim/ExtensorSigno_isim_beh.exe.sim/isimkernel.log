@@ -1,0 +1,29 @@
+Command line:
+   ExtensorSigno_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  57442
+
+Wed Nov  1 04:54:35 2023
+
+
+ Elaboration Time: 0.39 sec
+
+ Current Memory Usage: 215.4 Meg
+
+ Total Signals          : 3
+ Total Nets             : 80
+ Total Signal Drivers   : 2
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 1
+ Total Traceable Variables  : 8
+ Total Scalar Nets and Variables : 440
+Total Line Count : 3
+
+ Total Simulation Time: 0.44 sec
+
+ Current Memory Usage: 292.999 Meg
+
+Wed Nov  1 04:55:25 2023
+
