@@ -1,0 +1,8 @@
+[Inputs]
+branch
+zero
+=inmediato[31:0]=
+=suma[5:0]=
+[Outputs]
+=suma_out[5:0]=
+[BiDir]

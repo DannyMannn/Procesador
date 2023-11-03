@@ -5,10 +5,10 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity MemoriaRegistros is
     Port (
 			  clk, we: in STD_LOGIC;
-			  r1 : in  STD_LOGIC_VECTOR (4 downto 0);
-           r2 : in  STD_LOGIC_VECTOR (4 downto 0);
-           r3 : in  STD_LOGIC_VECTOR (4 downto 0);
-           dato : in  STD_LOGIC_VECTOR (31 downto 0);
+			  rs : in  STD_LOGIC_VECTOR (4 downto 0);
+           rt : in  STD_LOGIC_VECTOR (4 downto 0);
+           rd : in  STD_LOGIC_VECTOR (4 downto 0);
+           dato3 : in  STD_LOGIC_VECTOR (31 downto 0);
            dato1 : out  STD_LOGIC_VECTOR (31 downto 0);
            dato2 : out  STD_LOGIC_VECTOR (31 downto 0);
            escritura : in  STD_LOGIC_VECTOR (1 downto 0));
@@ -46,18 +46,18 @@ architecture Behavioral of MemoriaRegistros is
 			others=>x"00000000");
 
 begin
-	process (clk, r1, r2, r3, we) begin
+	process (clk, rs, rt, rd, we) begin
 	if (clk'event and clk='0') then
 		if we = '1' then
-			dato1 <= RAM(conv_integer(r1));
-			dato2 <= RAM(conv_integer(r2));
+			dato1 <= RAM(conv_integer(rs));
+			dato2 <= RAM(conv_integer(rt));
 		end if;
 	else
 		if we = '1' then
-			dato1 <= RAM(conv_integer(r1));
-			dato2 <= RAM(conv_integer(r2));
+			dato1 <= RAM(conv_integer(rs));
+			dato2 <= RAM(conv_integer(rt));
 		else
-			RAM(conv_integer(r3)) <= dato;
+			RAM(conv_integer(rd)) <= dato3;
 		end if;
 	end if;
 end process;

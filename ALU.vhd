@@ -5,10 +5,11 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 
 entity ALU is
-    Port ( registro_a : in  STD_LOGIC_VECTOR (31 downto 0);
-           registro_b : in  STD_LOGIC_VECTOR (31 downto 0);
+    Port ( rs : in  STD_LOGIC_VECTOR (31 downto 0);
+           rt : in  STD_LOGIC_VECTOR (31 downto 0);
            codigo_operacion : in  STD_LOGIC_VECTOR (5 downto 0);
            operacion: in STD_LOGIC_VECTOR (5 downto 0);
+			  inmediato_in: in STD_LOGIC_VECTOR (31 downto 0);
            resultado : out  STD_LOGIC_VECTOR (31 downto 0);
            zero : out STD_LOGIC
        );
@@ -18,34 +19,47 @@ architecture Behavioral of ALU is
 
 begin
 
-process(registro_a, registro_b, codigo_operacion, operacion) begin
+process(rs, rt, codigo_operacion, operacion) begin
+	zero <= '0';
 	case operacion is
 		when "000001" => -- Tipo R
 			case codigo_operacion is
 				 when "000001" =>
-					  resultado <= registro_a + registro_b;
+					  resultado <= rs + rt;
 				 when "000010" =>
-					  resultado <= registro_a - registro_b;
+					  resultado <= rs - rt;
 				 when "000011" =>
-					  resultado <= registro_a AND registro_b;
+					  resultado <= rs AND rt;
 				 when "000100" =>
-					  resultado <= registro_a OR registro_b;
+					  resultado <= rs OR rt;
 				 when "000101" =>
-					  resultado <= NOT registro_b;
+					  resultado <= NOT rt;
 				 when "000110" =>
-					  resultado <= NOT registro_b + 1;
+					  resultado <= NOT rt + 1;
 				 when others =>
 					  resultado <= x"00000000";
 			end case;
             zero <= '0';
       when "000010" => -- Tipo J
             zero <= '1';
+				resultado <= x"00000000";
 		when "000011" => -- Tipo I beq
-            zero <= '1';
+			if(rs = rt) then
+				zero <= '1';
+				resultado <= x"00000001";
+			else
+				resultado <= x"00000000";
+			end if;
 		when "000100" => -- Tipo I bne
-            zero <= '1';
+			if(rs /= rt) then
+				zero <= '1';
+				resultado <= x"00000001";
+			else
+				resultado <= x"00000000";
+			end if;
 		when others =>
 			zero <= '0';
+			resultado <= x"00000000";
 	end case;
 end process;
 				

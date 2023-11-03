@@ -1,2 +1,4 @@
 vhdtdtfi -lib work MemDatos.vhd -prj Procesador -o MemDatos.spl -module MemDatos -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
 spl2sym -intstyle ise -family spartan6 -w MemDatos.spl /home/ise/Documents/Procesador/MemDatos.sym 
+vhdtdtfi -lib work MemDatos.vhd -prj Procesador -o MemDatos.spl -module MemDatos -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 -w MemDatos.spl /home/ise/Documents/Procesador/MemDatos.sym 

@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/Documents/Procesador/MUX_Sumador_isim_beh.exe" -prj "/home/ise/Documents/Procesador/MUX_Sumador_beh.prj" "work.MUX_Sumador" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/Documents/Procesador/ALU_isim_beh.exe" -prj "/home/ise/Documents/Procesador/ALU_beh.prj" "work.ALU" 

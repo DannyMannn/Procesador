@@ -1,0 +1,2 @@
+vhdtdtfi -lib work MUX_Sumador.vhd -prj Procesador -o MUX_Sumador.spl -module MUX_Sumador -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 -w MUX_Sumador.spl /home/ise/Documents/Procesador/MUX_Sumador.sym 

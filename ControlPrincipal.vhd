@@ -15,7 +15,7 @@ entity ControlPrincipal is
 end ControlPrincipal;
 
 architecture Behavioral of ControlPrincipal is
-   TYPE estados is (E0, E1, E2, E3, E4, E5, E6);		--lista estados
+   TYPE estados is (E0, E1, E2, E3, E4);		--lista estados
 	SIGNAL estado_presente, estado_siguiente: estados;
 begin
     

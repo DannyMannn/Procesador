@@ -1,18 +1,21 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.7 - xst P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:/Users/danie/Documents/GitHub/Procesador/xst/projnav.tmp
+--> 
+Parameter TMPDIR set to /home/ise/Documents/Procesador/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.30 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.41 secs
  
---> Parameter xsthdpdir set to C:/Users/danie/Documents/GitHub/Procesador/xst
+--> 
+Parameter xsthdpdir set to /home/ise/Documents/Procesador/xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.30 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.41 secs
  
---> Reading design: MemoriaInstrucciones.prj
+--> 
+Reading design: MemoriaInstrucciones.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -39,17 +42,18 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\danie\Documents\GitHub\Procesador\MemoriaInstrucciones.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/MemoriaInstrucciones.vhd" into library work
 Parsing entity <MemoriaInstrucciones>.
 Parsing architecture <Behavioral> of entity <memoriainstrucciones>.
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.62 secs
+Total REAL time to Xst completion: 33.00 secs
+Total CPU time to Xst completion: 32.72 secs
  
 --> 
 
-Total memory usage is 4446888 kilobytes
+
+Total memory usage is 399528 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

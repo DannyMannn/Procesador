@@ -1,0 +1,7 @@
+[Inputs]
+mem_to_reg_ctrl
+=mem_dato_out[31:0]=
+=alu_result[31:0]=
+[Outputs]
+=write_data[31:0]=
+[BiDir]

@@ -15,9 +15,9 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity Decodificador is
     Port ( instruccion : in  STD_LOGIC_VECTOR (31 downto 0);
            operacion : out  STD_LOGIC_VECTOR (5 downto 0);
-           r1 : out  STD_LOGIC_VECTOR (4 downto 0);
-           r2 : out  STD_LOGIC_VECTOR (4 downto 0);
-           r3 : out  STD_LOGIC_VECTOR (4 downto 0);
+           rs : out  STD_LOGIC_VECTOR (4 downto 0);
+           rt : out  STD_LOGIC_VECTOR (4 downto 0);
+           rd : out  STD_LOGIC_VECTOR (4 downto 0);
            shamt : out  STD_LOGIC_VECTOR (4 downto 0);
 			  
 			  inmediato: out STD_LOGIC_VECTOR (15 downto 0); -- para INSTRUCCIONES TIPO I
@@ -38,23 +38,23 @@ begin
 		operacion(4) <= instruccion(30);
 		operacion(5) <= instruccion(31);
 		
-		r1(0) <= instruccion(21);
-		r1(1) <= instruccion(22);
-		r1(2) <= instruccion(23);
-		r1(3) <= instruccion(24);
-		r1(4) <= instruccion(25);
+		rs(0) <= instruccion(21);
+		rs(1) <= instruccion(22);
+		rs(2) <= instruccion(23);
+		rs(3) <= instruccion(24);
+		rs(4) <= instruccion(25);
 		
-		r2(0) <= instruccion(16);
-		r2(1) <= instruccion(17);
-		r2(2) <= instruccion(18);
-		r2(3) <= instruccion(19);
-		r2(4) <= instruccion(20);
+		rt(0) <= instruccion(16);
+		rt(1) <= instruccion(17);
+		rt(2) <= instruccion(18);
+		rt(3) <= instruccion(19);
+		rt(4) <= instruccion(20);
 		
-		r3(0) <= instruccion(11);
-		r3(1) <= instruccion(12);
-		r3(2) <= instruccion(13);
-		r3(3) <= instruccion(14);
-		r3(4) <= instruccion(15);
+		rd(0) <= instruccion(11);
+		rd(1) <= instruccion(12);
+		rd(2) <= instruccion(13);
+		rd(3) <= instruccion(14);
+		rd(4) <= instruccion(15);
 		
 		shamt(0) <= instruccion(6);
 		shamt(1) <= instruccion(7);

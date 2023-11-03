@@ -1,8 +1,10 @@
 [Inputs]
-=registro_a[31:0]=
-=registro_b[31:0]=
+=rs[31:0]=
+=rt[31:0]=
 =codigo_operacion[5:0]=
 =operacion[5:0]=
+=inmediato_in[31:0]=
 [Outputs]
+zero
 =resultado[31:0]=
 [BiDir]
