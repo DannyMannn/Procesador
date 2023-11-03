@@ -14,18 +14,18 @@ end MemoriaInstrucciones;
 architecture Behavioral of MemoriaInstrucciones is
 	type rom_array is array (0 to 11) of STD_LOGIC_VECTOR(31 downto 0);
 	constant rom_data : rom_array := (
-		x"00000000",
-		x"04853001",
-		x"04E84802",
-		x"054B6003",
-		x"05AE7804",
-		x"06119005",
-		x"0AD70080",
-		x"0B190080",
-		x"0C000100",
-		x"033A5406",
-		x"0B5B0080",
-		x"0BE00080"
+		x"00000000",    -- Operacion 0
+		x"0ED70008",    -- Beq Tipo I
+      x"04853001",    -- Suma Tipo R
+		x"04E84802",    -- Resta Tipo R
+		x"054B6003",    -- And Tipo R
+		x"05AE7804",    -- Or Tipo R
+      x"06119005",    -- Neg B Tipo R
+		x"1319000A",    -- Bne Tipo I
+		x"0674A806",    -- Comp2B Tipo R
+		x"08000000",    -- Salto Tipo J
+		x"175B0000",    -- Sw Tipo I
+		x"1B9D0000"     -- Lw Tipo I
 	);
 begin
 	process(reloj)

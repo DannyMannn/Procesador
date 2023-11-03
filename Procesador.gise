@@ -114,6 +114,10 @@
     <transform xil_pn:end_ts="1698816279" xil_pn:in_ck="2025829624645550099" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1698816279">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ALU.vhd"/>
       <outfile xil_pn:name="ALU_CTRL.vhd"/>
       <outfile xil_pn:name="ControlPrincipal.vhd"/>
@@ -146,6 +150,11 @@
     <transform xil_pn:end_ts="1698816302" xil_pn:in_ck="4884420368666978076" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1698816302">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ALU.vhd"/>
       <outfile xil_pn:name="ALU_CTRL.vhd"/>
       <outfile xil_pn:name="Camino.vhf"/>
@@ -166,7 +175,11 @@
     <transform xil_pn:end_ts="1698816310" xil_pn:in_ck="4884420368666978076" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8272467915046836474" xil_pn:start_ts="1698816302">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="MUX_Sumador_beh.prj"/>
       <outfile xil_pn:name="MUX_Sumador_isim_beh.exe"/>
@@ -178,6 +191,8 @@
     <transform xil_pn:end_ts="1698816311" xil_pn:in_ck="1749013513441720959" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="9157376497102200167" xil_pn:start_ts="1698816310">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="MUX_Sumador_isim_beh.wdb"/>
