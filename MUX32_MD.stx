@@ -1,21 +1,18 @@
-Release 14.7 - xst P.20131013 (lin64)
+Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> 
-Parameter TMPDIR set to /home/ise/Documents/Procesador/xst/projnav.tmp
+--> Parameter TMPDIR set to C:/Users/david/Procesador-main/Procesador-main/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.42 secs
+Total CPU time to Xst completion: 0.22 secs
  
---> 
-Parameter xsthdpdir set to /home/ise/Documents/Procesador/xst
+--> Parameter xsthdpdir set to C:/Users/david/Procesador-main/Procesador-main/xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.42 secs
+Total CPU time to Xst completion: 0.22 secs
  
---> 
-Reading design: MUX32_MD.prj
+--> Reading design: MUX32_MD.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -42,18 +39,17 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/ise/Documents/Procesador/MUX32_MD.vhd" into library work
+Parsing VHDL file "C:\Users\david\Procesador-main\Procesador-main\MUX32_MD.vhd" into library work
 Parsing entity <MUX32_MD>.
 Parsing architecture <Behavioral> of entity <mux32_md>.
 
 
-Total REAL time to Xst completion: 34.00 secs
-Total CPU time to Xst completion: 33.68 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.46 secs
  
 --> 
 
-
-Total memory usage is 396900 kilobytes
+Total memory usage is 4446296 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

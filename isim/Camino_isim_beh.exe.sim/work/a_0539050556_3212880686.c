@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ise/Documents/Procesador/Decodificador.vhd";
+static const char *ng0 = "/home/ise/Downloads/Procesador-main/Decodificador.vhd";
 
 
 
@@ -565,9 +565,9 @@ LAB0:    xsi_set_current_line(34, ng0);
     *((unsigned char *)t12) = t7;
     xsi_driver_first_trans_delta(t8, 0U, 1, 0LL);
     xsi_set_current_line(72, ng0);
-    t1 = (t0 + 6576);
+    t1 = (t0 + 6640);
     *((int *)t1) = 0;
-    t2 = (t0 + 6580);
+    t2 = (t0 + 6644);
     *((int *)t2) = 15;
     t3 = 0;
     t13 = 15;
@@ -576,9 +576,9 @@ LAB2:    if (t3 <= t13)
         goto LAB3;
 
 LAB5:    xsi_set_current_line(76, ng0);
-    t1 = (t0 + 6584);
+    t1 = (t0 + 6648);
     *((int *)t1) = 0;
-    t2 = (t0 + 6588);
+    t2 = (t0 + 6652);
     *((int *)t2) = 25;
     t3 = 0;
     t13 = 25;
@@ -593,7 +593,7 @@ LAB1:    return;
 LAB3:    xsi_set_current_line(73, ng0);
     t8 = (t0 + 1032U);
     t9 = *((char **)t8);
-    t8 = (t0 + 6576);
+    t8 = (t0 + 6640);
     t14 = *((int *)t8);
     t15 = (t14 - 31);
     t4 = (t15 * -1);
@@ -602,7 +602,7 @@ LAB3:    xsi_set_current_line(73, ng0);
     t6 = (0 + t5);
     t10 = (t9 + t6);
     t7 = *((unsigned char *)t10);
-    t11 = (t0 + 6576);
+    t11 = (t0 + 6640);
     t16 = *((int *)t11);
     t17 = (t16 - 15);
     t18 = (t17 * -1);
@@ -616,23 +616,23 @@ LAB3:    xsi_set_current_line(73, ng0);
     *((unsigned char *)t24) = t7;
     xsi_driver_first_trans_delta(t12, t20, 1, 0LL);
 
-LAB4:    t1 = (t0 + 6576);
+LAB4:    t1 = (t0 + 6640);
     t3 = *((int *)t1);
-    t2 = (t0 + 6580);
+    t2 = (t0 + 6644);
     t13 = *((int *)t2);
     if (t3 == t13)
         goto LAB5;
 
 LAB6:    t14 = (t3 + 1);
     t3 = t14;
-    t8 = (t0 + 6576);
+    t8 = (t0 + 6640);
     *((int *)t8) = t3;
     goto LAB2;
 
 LAB8:    xsi_set_current_line(77, ng0);
     t8 = (t0 + 1032U);
     t9 = *((char **)t8);
-    t8 = (t0 + 6584);
+    t8 = (t0 + 6648);
     t14 = *((int *)t8);
     t15 = (t14 - 31);
     t4 = (t15 * -1);
@@ -641,7 +641,7 @@ LAB8:    xsi_set_current_line(77, ng0);
     t6 = (0 + t5);
     t10 = (t9 + t6);
     t7 = *((unsigned char *)t10);
-    t11 = (t0 + 6584);
+    t11 = (t0 + 6648);
     t16 = *((int *)t11);
     t17 = (t16 - 25);
     t18 = (t17 * -1);
@@ -655,16 +655,16 @@ LAB8:    xsi_set_current_line(77, ng0);
     *((unsigned char *)t24) = t7;
     xsi_driver_first_trans_delta(t12, t20, 1, 0LL);
 
-LAB9:    t1 = (t0 + 6584);
+LAB9:    t1 = (t0 + 6648);
     t3 = *((int *)t1);
-    t2 = (t0 + 6588);
+    t2 = (t0 + 6652);
     t13 = *((int *)t2);
     if (t3 == t13)
         goto LAB10;
 
 LAB11:    t14 = (t3 + 1);
     t3 = t14;
-    t8 = (t0 + 6584);
+    t8 = (t0 + 6648);
     *((int *)t8) = t3;
     goto LAB7;
 

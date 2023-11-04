@@ -1,22 +1,52 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/Documents/Procesador/ALU_isim_beh.exe -prj /home/ise/Documents/Procesador/ALU_beh.prj work.ALU 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/Downloads/Procesador-main/Camino_isim_beh.exe -prj /home/ise/Downloads/Procesador-main/Camino_beh.prj work.Camino 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 6
 Turning on mult-threading, number of parallel sub-compilation jobs: 12 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ise/Documents/Procesador/ALU.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/SUMADOR.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/PC.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/MUX_Sumador.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/MUX5Bits.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/MUX32_MD.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/MUX32Bits.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/MemoriaRegistros.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/MemoriaInstrucciones.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/MemDatos.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/GeneradorCiclos.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/ExtensorSigno.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/Decodificador.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/ControlPrincipal.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/ALU.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/Camino.vhf" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 96600 KB
-Fuse CPU Usage: 5690 ms
+Fuse Memory Usage: 114352 KB
+Fuse CPU Usage: 6290 ms
 Compiling package standard
 Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package vcomponents
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture behavioral of entity alu
+Compiling architecture behavioral of entity PC [pc_default]
+Compiling architecture behavioral of entity SUMADOR [sumador_default]
+Compiling architecture behavioral of entity MemoriaInstrucciones [memoriainstrucciones_default]
+Compiling architecture behavioral of entity Decodificador [decodificador_default]
+Compiling architecture behavioral of entity MemoriaRegistros [memoriaregistros_default]
+Compiling architecture behavioral of entity ALU [alu_default]
+Compiling architecture behavioral of entity GeneradorCiclos [generadorciclos_default]
+Compiling architecture behavioral of entity MemDatos [memdatos_default]
+Compiling architecture behavioral of entity MUX5Bits [mux5bits_default]
+Compiling architecture behavioral of entity ControlPrincipal [controlprincipal_default]
+Compiling architecture behavioral of entity ExtensorSigno [extensorsigno_default]
+Compiling architecture behavioral of entity MUX32Bits [mux32bits_default]
+Compiling architecture behavioral of entity MUX_Sumador [mux_sumador_default]
+Compiling architecture behavioral of entity MUX32_MD [mux32_md_default]
+Compiling architecture behavioral of entity camino
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 5 VHDL Units
-Built simulation executable /home/ise/Documents/Procesador/ALU_isim_beh.exe
-Fuse Memory Usage: 929148 KB
-Fuse CPU Usage: 6350 ms
-GCC CPU Usage: 820 ms
+Waiting for 5 sub-compilation(s) to finish...
+Compiled 35 VHDL Units
+Built simulation executable /home/ise/Downloads/Procesador-main/Camino_isim_beh.exe
+Fuse Memory Usage: 951564 KB
+Fuse CPU Usage: 8190 ms
+GCC CPU Usage: 27190 ms

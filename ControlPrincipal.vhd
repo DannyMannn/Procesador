@@ -10,6 +10,7 @@ entity ControlPrincipal is
         mem_write : out STD_LOGIC;
         mem_read : out STD_LOGIC;
         mem_to_reg : out STD_LOGIC;
+        reg_write : out STD_LOGIC;
         alu_src : out STD_LOGIC
     );
 end ControlPrincipal;
@@ -27,6 +28,7 @@ begin
                 mem_write <= '0';
                 mem_read <= '0';
                 mem_to_reg <= '0';
+                reg_write <= '0';
                 alu_src <= '0';
                 estado_siguiente <= E1;
             when E1 =>
@@ -35,6 +37,7 @@ begin
                 mem_write <= '0';
                 mem_read <= '0';
                 mem_to_reg <= '0';
+                reg_write <= '0';
                 if (operacion = "000001") then
                     alu_src <= '0';
                 else
@@ -46,6 +49,7 @@ begin
                 branch <= '0';
                 mem_read <= '0';
                 mem_to_reg <= '0';
+                reg_write <= '0';
                 if (operacion = "000101") then
                     mem_write <= '1';
                     mem_read <= '0';
@@ -62,6 +66,7 @@ begin
                 mem_write <= '0';
                 mem_read <= '0';
                 mem_to_reg <= '1';
+                reg_write <= '0';
                 alu_src <= '0';
                 estado_siguiente <= E4;
             when E4 =>
@@ -70,6 +75,7 @@ begin
                 mem_write <= '0';
                 mem_read <= '0';
                 mem_to_reg <= '0';
+                reg_write <= '0';
                 alu_src <= '0';
                 estado_siguiente <= E0;
         end case;
@@ -77,3 +83,4 @@ begin
     end process;
     
 end Behavioral;
+ 

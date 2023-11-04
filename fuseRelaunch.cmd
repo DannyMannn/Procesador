@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/Documents/Procesador/ALU_isim_beh.exe" -prj "/home/ise/Documents/Procesador/ALU_beh.prj" "work.ALU" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/Downloads/Procesador-main/Camino_isim_beh.exe" -prj "/home/ise/Downloads/Procesador-main/Camino_beh.prj" "work.Camino" 

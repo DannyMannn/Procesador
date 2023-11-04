@@ -1,5 +1,5 @@
-set -tmpdir "/home/ise/Documents/Procesador/xst/projnav.tmp"
-set -xsthdpdir "/home/ise/Documents/Procesador/xst"
+set -tmpdir "C:/Users/david/Procesador-main/Procesador-main/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/david/Procesador-main/Procesador-main/xst"
 run -compileonly yes
 -p xc6slx45-3-csg324
 -top MemDatos

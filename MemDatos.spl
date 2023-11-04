@@ -2,8 +2,8 @@
 clk
 mem_write
 mem_read
-=addr[5:0]=
-=dwrite[15:0]=
+=addr[31:0]=
+=dwrite[31:0]=
 [Outputs]
-=dread[15:0]=
+=dread[31:0]=
 [BiDir]

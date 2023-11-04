@@ -9,7 +9,6 @@ entity ALU is
            rt : in  STD_LOGIC_VECTOR (31 downto 0);
            codigo_operacion : in  STD_LOGIC_VECTOR (5 downto 0);
            operacion: in STD_LOGIC_VECTOR (5 downto 0);
-			  inmediato_in: in STD_LOGIC_VECTOR (31 downto 0);
            resultado : out  STD_LOGIC_VECTOR (31 downto 0);
            zero : out STD_LOGIC
        );
@@ -41,25 +40,27 @@ process(rs, rt, codigo_operacion, operacion) begin
 			end case;
             zero <= '0';
       when "000010" => -- Tipo J
+            resultado <= x"00000000";
             zero <= '1';
-				resultado <= x"00000000";
 		when "000011" => -- Tipo I beq
 			if(rs = rt) then
-				zero <= '1';
 				resultado <= x"00000001";
+                zero <= '1';
 			else
 				resultado <= x"00000000";
+                zero <= '0';
 			end if;
 		when "000100" => -- Tipo I bne
 			if(rs /= rt) then
-				zero <= '1';
 				resultado <= x"00000001";
+                zero <= '1';
 			else
 				resultado <= x"00000000";
+                zero <= '0';
 			end if;
-		when others =>
-			zero <= '0';
-			resultado <= x"00000000";
+		when others => -- Tipo I lw y sw
+			resultado <= rs + rt;
+            zero <= '0';
 	end case;
 end process;
 				

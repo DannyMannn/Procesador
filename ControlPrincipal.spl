@@ -7,5 +7,6 @@ branch
 mem_write
 mem_read
 mem_to_reg
+reg_write
 alu_src
 [BiDir]

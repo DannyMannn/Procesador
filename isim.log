@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/ise/Documents/Procesador/ALU_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/Documents/Procesador/ALU_isim_beh.wdb 
+Running: /home/ise/Downloads/Procesador-main/Camino_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/Downloads/Procesador-main/Camino_isim_beh.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 ----------------------------------------------------------------------
 INFO:Security:61 - The XILINXD_LICENSE_FILE environment variable is not set.
@@ -29,18 +29,8 @@ Time resolution is 1 ps
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
+at 0 ps, Instance /camino/XLXI_7/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 Finished circuit initialization process.
-# isim force add /alu/registro_a 111 -radix bin
-# isim force add /alu/registro_a 111 -radix bin
-# isim force add /alu/registro_b 111 -radix bin
-# isim force add /alu/registro_b 111 -radix bin
-# isim force add /alu/operacion 000011 -radix bin
-# isim force add /alu/operacion 000011 -radix bin
-# run 1.00us
-# isim force add /alu/registro_a 11 -radix bin
-# isim force add /alu/registro_a 11 -radix bin
-# run 1.00us
-# isim force add /alu/operacion 100 -radix bin
-# isim force add /alu/operacion 100 -radix bin
-# run 1.00us
+at 0 ps, Instance /camino/XLXI_6/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /camino/XLXI_6/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 # exit 0

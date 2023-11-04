@@ -1,11 +1,10 @@
 [Inputs]
 clk
-we
+reg_write
 =rs[4:0]=
 =rt[4:0]=
 =rd[4:0]=
 =dato3[31:0]=
-=escritura[1:0]=
 [Outputs]
 =dato1[31:0]=
 =dato2[31:0]=
