@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity MemoriaRegistros is
     Port (
         clk : in STD_LOGIC;
-        reg_write : in STD_LOGIC;
+        reg_write : in STD_LOGIC; -- originalmente we
         rs : in  STD_LOGIC_VECTOR (4 downto 0);
         rt : in  STD_LOGIC_VECTOR (4 downto 0);
         rd : in  STD_LOGIC_VECTOR (4 downto 0);
@@ -54,8 +54,8 @@ begin
             if reg_write = '0' then
                 dato1 <= RAM(conv_integer(rs));
                 dato2 <= RAM(conv_integer(rt));
-            else
-                -- rd <= dato3;
+            else -- reg_write = '1'
+                RAM(conv_integer(rd)) <= dato3;
             end if;
         end if;
     end process;

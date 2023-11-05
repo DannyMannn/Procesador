@@ -1,6 +1,6 @@
 [Inputs]
 clk
-=operacion[5:0]=
+=instruccion[31:0]=
 [Outputs]
 reg_destino
 branch

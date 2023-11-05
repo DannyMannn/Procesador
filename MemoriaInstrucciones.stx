@@ -1,18 +1,18 @@
 Release 14.7 - xst P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
-Parameter TMPDIR set to /home/ise/Documents/Procesador/xst/projnav.tmp
+Parameter TMPDIR set to /home/ise/Downloads/Procesador-main/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.41 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.44 secs
  
 --> 
-Parameter xsthdpdir set to /home/ise/Documents/Procesador/xst
+Parameter xsthdpdir set to /home/ise/Downloads/Procesador-main/xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.41 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.45 secs
  
 --> 
 Reading design: MemoriaInstrucciones.prj
@@ -42,13 +42,13 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/ise/Documents/Procesador/MemoriaInstrucciones.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/MemoriaInstrucciones.vhd" into library work
 Parsing entity <MemoriaInstrucciones>.
 Parsing architecture <Behavioral> of entity <memoriainstrucciones>.
 
 
-Total REAL time to Xst completion: 33.00 secs
-Total CPU time to Xst completion: 32.72 secs
+Total REAL time to Xst completion: 36.00 secs
+Total CPU time to Xst completion: 36.30 secs
  
 --> 
 

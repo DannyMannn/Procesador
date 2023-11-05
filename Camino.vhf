@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Camino.vhf
--- /___/   /\     Timestamp : 11/04/2023 07:32:22
+-- /___/   /\     Timestamp : 11/05/2023 06:29:57
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -26,60 +26,73 @@ library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
 entity Camino is
-   port ( XLXN_171       : in    std_logic; 
-          rout           : out   std_logic_vector (5 downto 0); 
-          salida_meminst : out   std_logic_vector (31 downto 0); 
-          XLXN_21        : out   std_logic_vector (4 downto 0); 
-          XLXN_22        : out   std_logic_vector (4 downto 0); 
-          XLXN_64        : out   std_logic_vector (4 downto 0); 
-          XLXN_65        : out   std_logic_vector (4 downto 0); 
-          XLXN_67        : out   std_logic_vector (15 downto 0); 
-          XLXN_68        : out   std_logic_vector (31 downto 0); 
-          XLXN_78        : out   std_logic_vector (31 downto 0); 
-          XLXN_92        : out   std_logic_vector (5 downto 0); 
-          XLXN_143       : out   std_logic_vector (5 downto 0); 
-          XLXN_145       : out   std_logic_vector (5 downto 0); 
-          XLXN_161       : out   std_logic_vector (31 downto 0); 
-          XLXN_163       : out   std_logic_vector (31 downto 0); 
-          XLXN_164       : out   std_logic_vector (31 downto 0); 
-          XLXN_165       : out   std_logic_vector (31 downto 0); 
-          XLXN_168       : out   std_logic; 
-          XLXN_169       : out   std_logic);
+   port ( gen_ciclos_clk    : in    std_logic; 
+          alu_result        : out   std_logic_vector (31 downto 0); 
+          ctrl_alu_src      : out   std_logic; 
+          ctrl_branch       : out   std_logic; 
+          ctrl_mem_read     : out   std_logic; 
+          ctrl_mem_to_reg   : out   std_logic; 
+          ctrl_mem_write    : out   std_logic; 
+          ctrl_princ_clk    : out   std_logic; 
+          ctrl_reg_dst      : out   std_logic; 
+          decod_clk         : out   std_logic; 
+          decod_cod_op      : out   std_logic_vector (5 downto 0); 
+          decod_inmediato   : out   std_logic_vector (15 downto 0); 
+          decod_rd          : out   std_logic_vector (4 downto 0); 
+          decod_rs          : out   std_logic_vector (4 downto 0); 
+          decod_rt          : out   std_logic_vector (4 downto 0); 
+          ent_pc            : out   std_logic_vector (5 downto 0); 
+          extensor_s_inm    : out   std_logic_vector (31 downto 0); 
+          mem_datos_clk     : out   std_logic; 
+          mem_inst_clk      : out   std_logic; 
+          mem_reg_clk       : out   std_logic; 
+          mem_reg_dato1     : out   std_logic_vector (31 downto 0); 
+          mem_reg_dato2     : out   std_logic_vector (31 downto 0); 
+          mux5b_reg_dst     : out   std_logic_vector (4 downto 0); 
+          mux32bi_out_to_rs : out   std_logic_vector (31 downto 0); 
+          pc_clk            : out   std_logic; 
+          rout_pc           : out   std_logic_vector (5 downto 0); 
+          salida_mem_inst   : out   std_logic_vector (31 downto 0); 
+          sumador_clk       : out   std_logic; 
+          sumador_out       : out   std_logic_vector (5 downto 0); 
+          write_data_dato3  : out   std_logic_vector (31 downto 0); 
+          XLXN_164          : out   std_logic_vector (31 downto 0));
 end Camino;
 
 architecture BEHAVIORAL of Camino is
-   signal XLXN_1                 : std_logic;
-   signal XLXN_3                 : std_logic;
-   signal XLXN_6                 : std_logic;
-   signal XLXN_8                 : std_logic_vector (5 downto 0);
-   signal XLXN_18                : std_logic_vector (31 downto 0);
-   signal XLXN_66                : std_logic;
-   signal XLXN_133               : std_logic;
-   signal XLXN_154               : std_logic;
-   signal XLXN_157               : std_logic;
-   signal XLXN_158               : std_logic;
-   signal XLXN_159               : std_logic;
-   signal XLXN_167               : std_logic;
-   signal XLXN_170               : std_logic;
-   signal rout_DUMMY             : std_logic_vector (5 downto 0);
-   signal XLXN_64_DUMMY          : std_logic_vector (4 downto 0);
-   signal XLXN_65_DUMMY          : std_logic_vector (4 downto 0);
-   signal XLXN_67_DUMMY          : std_logic_vector (15 downto 0);
-   signal XLXN_68_DUMMY          : std_logic_vector (31 downto 0);
-   signal XLXN_78_DUMMY          : std_logic_vector (31 downto 0);
-   signal salida_meminst_DUMMY   : std_logic_vector (31 downto 0);
-   signal XLXN_21_DUMMY          : std_logic_vector (4 downto 0);
-   signal XLXN_22_DUMMY          : std_logic_vector (4 downto 0);
-   signal XLXN_143_DUMMY         : std_logic_vector (5 downto 0);
-   signal XLXN_145_DUMMY         : std_logic_vector (5 downto 0);
-   signal XLXN_92_DUMMY          : std_logic_vector (5 downto 0);
-   signal XLXN_161_DUMMY         : std_logic_vector (31 downto 0);
-   signal XLXN_163_DUMMY         : std_logic_vector (31 downto 0);
-   signal XLXN_164_DUMMY         : std_logic_vector (31 downto 0);
-   signal XLXN_165_DUMMY         : std_logic_vector (31 downto 0);
-   signal XLXN_168_DUMMY         : std_logic;
-   signal XLXN_169_DUMMY         : std_logic;
-   signal XLXI_18_clk_openSignal : std_logic;
+   signal XLXN_154                : std_logic;
+   signal XLXN_157                : std_logic;
+   signal XLXN_174                : std_logic_vector (5 downto 0);
+   signal ctrl_mem_to_reg_DUMMY   : std_logic;
+   signal ctrl_mem_write_DUMMY    : std_logic;
+   signal ctrl_alu_src_DUMMY      : std_logic;
+   signal decod_inmediato_DUMMY   : std_logic_vector (15 downto 0);
+   signal ctrl_reg_dst_DUMMY      : std_logic;
+   signal ctrl_branch_DUMMY       : std_logic;
+   signal pc_clk_DUMMY            : std_logic;
+   signal decod_clk_DUMMY         : std_logic;
+   signal mem_reg_dato1_DUMMY     : std_logic_vector (31 downto 0);
+   signal sumador_out_DUMMY       : std_logic_vector (5 downto 0);
+   signal mem_reg_dato2_DUMMY     : std_logic_vector (31 downto 0);
+   signal write_data_dato3_DUMMY  : std_logic_vector (31 downto 0);
+   signal mux32bi_out_to_rs_DUMMY : std_logic_vector (31 downto 0);
+   signal decod_rd_DUMMY          : std_logic_vector (4 downto 0);
+   signal mem_inst_clk_DUMMY      : std_logic;
+   signal decod_rs_DUMMY          : std_logic_vector (4 downto 0);
+   signal decod_rt_DUMMY          : std_logic_vector (4 downto 0);
+   signal extensor_s_inm_DUMMY    : std_logic_vector (31 downto 0);
+   signal decod_cod_op_DUMMY      : std_logic_vector (5 downto 0);
+   signal alu_result_DUMMY        : std_logic_vector (31 downto 0);
+   signal ent_pc_DUMMY            : std_logic_vector (5 downto 0);
+   signal salida_mem_inst_DUMMY   : std_logic_vector (31 downto 0);
+   signal mux5b_reg_dst_DUMMY     : std_logic_vector (4 downto 0);
+   signal ctrl_princ_clk_DUMMY    : std_logic;
+   signal rout_pc_DUMMY           : std_logic_vector (5 downto 0);
+   signal XLXN_164_DUMMY          : std_logic_vector (31 downto 0);
+   signal sumador_clk_DUMMY       : std_logic;
+   signal mem_reg_clk_DUMMY       : std_logic;
+   signal ctrl_mem_read_DUMMY     : std_logic;
+   signal mem_datos_clk_DUMMY     : std_logic;
    component PC
       port ( clk  : in    std_logic; 
              Ent  : in    std_logic_vector (5 downto 0); 
@@ -99,15 +112,16 @@ architecture BEHAVIORAL of Camino is
    end component;
    
    component Decodificador
-      port ( instruccion      : in    std_logic_vector (31 downto 0); 
+      port ( clk              : in    std_logic; 
+             instruccion      : in    std_logic_vector (31 downto 0); 
              operacion        : out   std_logic_vector (5 downto 0); 
+             rs               : out   std_logic_vector (4 downto 0); 
+             rt               : out   std_logic_vector (4 downto 0); 
+             rd               : out   std_logic_vector (4 downto 0); 
              shamt            : out   std_logic_vector (4 downto 0); 
              inmediato        : out   std_logic_vector (15 downto 0); 
              direccion        : out   std_logic_vector (25 downto 0); 
-             codigo_operacion : out   std_logic_vector (5 downto 0); 
-             rs               : out   std_logic_vector (4 downto 0); 
-             rt               : out   std_logic_vector (4 downto 0); 
-             rd               : out   std_logic_vector (4 downto 0));
+             codigo_operacion : out   std_logic_vector (5 downto 0));
    end component;
    
    component MemoriaRegistros
@@ -136,7 +150,9 @@ architecture BEHAVIORAL of Camino is
              B   : out   std_logic; 
              C   : out   std_logic; 
              D   : out   std_logic; 
-             E   : out   std_logic);
+             E   : out   std_logic; 
+             F   : out   std_logic; 
+             G   : out   std_logic);
    end component;
    
    component MemDatos
@@ -157,7 +173,7 @@ architecture BEHAVIORAL of Camino is
    
    component ControlPrincipal
       port ( clk         : in    std_logic; 
-             operacion   : in    std_logic_vector (5 downto 0); 
+             instruccion : in    std_logic_vector (31 downto 0); 
              reg_destino : out   std_logic; 
              branch      : out   std_logic; 
              mem_write   : out   std_logic; 
@@ -176,7 +192,7 @@ architecture BEHAVIORAL of Camino is
       port ( control      : in    std_logic; 
              busB_in      : in    std_logic_vector (31 downto 0); 
              inmediato_in : in    std_logic_vector (31 downto 0); 
-             alu_src      : out   std_logic_vector (31 downto 0));
+             mux32_out    : out   std_logic_vector (31 downto 0));
    end component;
    
    component MUX_Sumador
@@ -195,123 +211,138 @@ architecture BEHAVIORAL of Camino is
    end component;
    
 begin
-   rout(5 downto 0) <= rout_DUMMY(5 downto 0);
-   salida_meminst(31 downto 0) <= salida_meminst_DUMMY(31 downto 0);
-   XLXN_21(4 downto 0) <= XLXN_21_DUMMY(4 downto 0);
-   XLXN_22(4 downto 0) <= XLXN_22_DUMMY(4 downto 0);
-   XLXN_64(4 downto 0) <= XLXN_64_DUMMY(4 downto 0);
-   XLXN_65(4 downto 0) <= XLXN_65_DUMMY(4 downto 0);
-   XLXN_67(15 downto 0) <= XLXN_67_DUMMY(15 downto 0);
-   XLXN_68(31 downto 0) <= XLXN_68_DUMMY(31 downto 0);
-   XLXN_78(31 downto 0) <= XLXN_78_DUMMY(31 downto 0);
-   XLXN_92(5 downto 0) <= XLXN_92_DUMMY(5 downto 0);
-   XLXN_143(5 downto 0) <= XLXN_143_DUMMY(5 downto 0);
-   XLXN_145(5 downto 0) <= XLXN_145_DUMMY(5 downto 0);
-   XLXN_161(31 downto 0) <= XLXN_161_DUMMY(31 downto 0);
-   XLXN_163(31 downto 0) <= XLXN_163_DUMMY(31 downto 0);
+   alu_result(31 downto 0) <= alu_result_DUMMY(31 downto 0);
+   ctrl_alu_src <= ctrl_alu_src_DUMMY;
+   ctrl_branch <= ctrl_branch_DUMMY;
+   ctrl_mem_read <= ctrl_mem_read_DUMMY;
+   ctrl_mem_to_reg <= ctrl_mem_to_reg_DUMMY;
+   ctrl_mem_write <= ctrl_mem_write_DUMMY;
+   ctrl_princ_clk <= ctrl_princ_clk_DUMMY;
+   ctrl_reg_dst <= ctrl_reg_dst_DUMMY;
+   decod_clk <= decod_clk_DUMMY;
+   decod_cod_op(5 downto 0) <= decod_cod_op_DUMMY(5 downto 0);
+   decod_inmediato(15 downto 0) <= decod_inmediato_DUMMY(15 downto 0);
+   decod_rd(4 downto 0) <= decod_rd_DUMMY(4 downto 0);
+   decod_rs(4 downto 0) <= decod_rs_DUMMY(4 downto 0);
+   decod_rt(4 downto 0) <= decod_rt_DUMMY(4 downto 0);
+   ent_pc(5 downto 0) <= ent_pc_DUMMY(5 downto 0);
+   extensor_s_inm(31 downto 0) <= extensor_s_inm_DUMMY(31 downto 0);
+   mem_datos_clk <= mem_datos_clk_DUMMY;
+   mem_inst_clk <= mem_inst_clk_DUMMY;
+   mem_reg_clk <= mem_reg_clk_DUMMY;
+   mem_reg_dato1(31 downto 0) <= mem_reg_dato1_DUMMY(31 downto 0);
+   mem_reg_dato2(31 downto 0) <= mem_reg_dato2_DUMMY(31 downto 0);
+   mux5b_reg_dst(4 downto 0) <= mux5b_reg_dst_DUMMY(4 downto 0);
+   mux32bi_out_to_rs(31 downto 0) <= mux32bi_out_to_rs_DUMMY(31 downto 0);
+   pc_clk <= pc_clk_DUMMY;
+   rout_pc(5 downto 0) <= rout_pc_DUMMY(5 downto 0);
+   salida_mem_inst(31 downto 0) <= salida_mem_inst_DUMMY(31 downto 0);
+   sumador_clk <= sumador_clk_DUMMY;
+   sumador_out(5 downto 0) <= sumador_out_DUMMY(5 downto 0);
+   write_data_dato3(31 downto 0) <= write_data_dato3_DUMMY(31 downto 0);
    XLXN_164(31 downto 0) <= XLXN_164_DUMMY(31 downto 0);
-   XLXN_165(31 downto 0) <= XLXN_165_DUMMY(31 downto 0);
-   XLXN_168 <= XLXN_168_DUMMY;
-   XLXN_169 <= XLXN_169_DUMMY;
    entrada_pc : PC
-      port map (clk=>XLXN_1,
-                Ent(5 downto 0)=>XLXN_92_DUMMY(5 downto 0),
-                Rout(5 downto 0)=>rout_DUMMY(5 downto 0));
+      port map (clk=>pc_clk_DUMMY,
+                Ent(5 downto 0)=>ent_pc_DUMMY(5 downto 0),
+                Rout(5 downto 0)=>rout_pc_DUMMY(5 downto 0));
    
    XLXI_1 : SUMADOR
-      port map (clk=>XLXN_6,
-                entrada(5 downto 0)=>rout_DUMMY(5 downto 0),
-                suma(5 downto 0)=>XLXN_145_DUMMY(5 downto 0));
+      port map (clk=>sumador_clk_DUMMY,
+                entrada(5 downto 0)=>rout_pc_DUMMY(5 downto 0),
+                suma(5 downto 0)=>sumador_out_DUMMY(5 downto 0));
    
    XLXI_4 : MemoriaInstrucciones
-      port map (address(5 downto 0)=>rout_DUMMY(5 downto 0),
-                reloj=>XLXN_3,
-                salida(31 downto 0)=>salida_meminst_DUMMY(31 downto 0));
+      port map (address(5 downto 0)=>rout_pc_DUMMY(5 downto 0),
+                reloj=>mem_inst_clk_DUMMY,
+                salida(31 downto 0)=>salida_mem_inst_DUMMY(31 downto 0));
    
    XLXI_5 : Decodificador
-      port map (instruccion(31 downto 0)=>salida_meminst_DUMMY(31 downto 0),
-                codigo_operacion(5 downto 0)=>XLXN_143_DUMMY(5 downto 0),
+      port map (clk=>decod_clk_DUMMY,
+                instruccion(31 downto 0)=>salida_mem_inst_DUMMY(31 downto 0),
+                codigo_operacion(5 downto 0)=>decod_cod_op_DUMMY(5 downto 0),
                 direccion=>open,
-                inmediato(15 downto 0)=>XLXN_67_DUMMY(15 downto 0),
-                operacion(5 downto 0)=>XLXN_8(5 downto 0),
-                rd(4 downto 0)=>XLXN_64_DUMMY(4 downto 0),
-                rs(4 downto 0)=>XLXN_21_DUMMY(4 downto 0),
-                rt(4 downto 0)=>XLXN_22_DUMMY(4 downto 0),
+                inmediato(15 downto 0)=>decod_inmediato_DUMMY(15 downto 0),
+                operacion(5 downto 0)=>XLXN_174(5 downto 0),
+                rd(4 downto 0)=>decod_rd_DUMMY(4 downto 0),
+                rs(4 downto 0)=>decod_rs_DUMMY(4 downto 0),
+                rt(4 downto 0)=>decod_rt_DUMMY(4 downto 0),
                 shamt=>open);
    
    XLXI_6 : MemoriaRegistros
-      port map (clk=>XLXN_159,
-                dato3(31 downto 0)=>XLXN_165_DUMMY(31 downto 0),
-                rd(4 downto 0)=>XLXN_65_DUMMY(4 downto 0),
+      port map (clk=>mem_reg_clk_DUMMY,
+                dato3(31 downto 0)=>write_data_dato3_DUMMY(31 downto 0),
+                rd(4 downto 0)=>mux5b_reg_dst_DUMMY(4 downto 0),
                 reg_write=>XLXN_154,
-                rs(4 downto 0)=>XLXN_21_DUMMY(4 downto 0),
-                rt(4 downto 0)=>XLXN_22_DUMMY(4 downto 0),
-                dato1(31 downto 0)=>XLXN_18(31 downto 0),
-                dato2(31 downto 0)=>XLXN_161_DUMMY(31 downto 0));
+                rs(4 downto 0)=>decod_rs_DUMMY(4 downto 0),
+                rt(4 downto 0)=>decod_rt_DUMMY(4 downto 0),
+                dato1(31 downto 0)=>mem_reg_dato1_DUMMY(31 downto 0),
+                dato2(31 downto 0)=>mem_reg_dato2_DUMMY(31 downto 0));
    
    XLXI_7 : ALU
-      port map (codigo_operacion(5 downto 0)=>XLXN_143_DUMMY(5 downto 0),
-                operacion(5 downto 0)=>XLXN_8(5 downto 0),
-                rs(31 downto 0)=>XLXN_18(31 downto 0),
-                rt(31 downto 0)=>XLXN_78_DUMMY(31 downto 0),
-                resultado(31 downto 0)=>XLXN_163_DUMMY(31 downto 0),
+      port map (codigo_operacion(5 downto 0)=>decod_cod_op_DUMMY(5 downto 0),
+                operacion(5 downto 0)=>XLXN_174(5 downto 0),
+                rs(31 downto 0)=>mem_reg_dato1_DUMMY(31 downto 0),
+                rt(31 downto 0)=>mux32bi_out_to_rs_DUMMY(31 downto 0),
+                resultado(31 downto 0)=>alu_result_DUMMY(31 downto 0),
                 zero=>XLXN_157);
    
    XLXI_10 : GeneradorCiclos
-      port map (clk=>XLXN_171,
-                A=>XLXN_1,
-                B=>XLXN_3,
-                C=>XLXN_6,
-                D=>XLXN_159,
-                E=>XLXN_170);
+      port map (clk=>gen_ciclos_clk,
+                A=>pc_clk_DUMMY,
+                B=>mem_inst_clk_DUMMY,
+                C=>sumador_clk_DUMMY,
+                D=>mem_reg_clk_DUMMY,
+                E=>mem_datos_clk_DUMMY,
+                F=>ctrl_princ_clk_DUMMY,
+                G=>decod_clk_DUMMY);
    
    XLXI_11 : MemDatos
-      port map (addr(31 downto 0)=>XLXN_163_DUMMY(31 downto 0),
-                clk=>XLXN_170,
-                dwrite(31 downto 0)=>XLXN_161_DUMMY(31 downto 0),
-                mem_read=>XLXN_169_DUMMY,
-                mem_write=>XLXN_168_DUMMY,
+      port map (addr(31 downto 0)=>alu_result_DUMMY(31 downto 0),
+                clk=>mem_datos_clk_DUMMY,
+                dwrite(31 downto 0)=>mem_reg_dato2_DUMMY(31 downto 0),
+                mem_read=>ctrl_mem_read_DUMMY,
+                mem_write=>ctrl_mem_write_DUMMY,
                 dread(31 downto 0)=>XLXN_164_DUMMY(31 downto 0));
    
    XLXI_17 : MUX5Bits
-      port map (control=>XLXN_66,
-                rd_in(4 downto 0)=>XLXN_64_DUMMY(4 downto 0),
-                rt_in(4 downto 0)=>XLXN_22_DUMMY(4 downto 0),
-                registro_destino(4 downto 0)=>XLXN_65_DUMMY(4 downto 0));
+      port map (control=>ctrl_reg_dst_DUMMY,
+                rd_in(4 downto 0)=>decod_rd_DUMMY(4 downto 0),
+                rt_in(4 downto 0)=>decod_rt_DUMMY(4 downto 0),
+                registro_destino(4 downto 0)=>mux5b_reg_dst_DUMMY(4 downto 0));
    
    XLXI_18 : ControlPrincipal
-      port map (clk=>XLXI_18_clk_openSignal,
-                operacion(5 downto 0)=>XLXN_8(5 downto 0),
-                alu_src=>XLXN_158,
-                branch=>XLXN_133,
-                mem_read=>XLXN_169_DUMMY,
-                mem_to_reg=>XLXN_167,
-                mem_write=>XLXN_168_DUMMY,
-                reg_destino=>XLXN_66,
+      port map (clk=>ctrl_princ_clk_DUMMY,
+                instruccion(31 downto 0)=>salida_mem_inst_DUMMY(31 downto 0),
+                alu_src=>ctrl_alu_src_DUMMY,
+                branch=>ctrl_branch_DUMMY,
+                mem_read=>ctrl_mem_read_DUMMY,
+                mem_to_reg=>ctrl_mem_to_reg_DUMMY,
+                mem_write=>ctrl_mem_write_DUMMY,
+                reg_destino=>ctrl_reg_dst_DUMMY,
                 reg_write=>XLXN_154);
    
    XLXI_19 : ExtensorSigno
-      port map (inmediato_in(15 downto 0)=>XLXN_67_DUMMY(15 downto 0),
-                inmediato_out(31 downto 0)=>XLXN_68_DUMMY(31 downto 0));
+      port map (inmediato_in(15 downto 0)=>decod_inmediato_DUMMY(15 downto 0),
+                inmediato_out(31 downto 0)=>extensor_s_inm_DUMMY(31 downto 0));
    
    XLXI_20 : MUX32Bits
-      port map (busB_in(31 downto 0)=>XLXN_161_DUMMY(31 downto 0),
-                control=>XLXN_158,
-                inmediato_in(31 downto 0)=>XLXN_68_DUMMY(31 downto 0),
-                alu_src(31 downto 0)=>XLXN_78_DUMMY(31 downto 0));
+      port map (busB_in(31 downto 0)=>mem_reg_dato2_DUMMY(31 downto 0),
+                control=>ctrl_alu_src_DUMMY,
+                inmediato_in(31 downto 0)=>extensor_s_inm_DUMMY(31 downto 0),
+                mux32_out(31 downto 0)=>mux32bi_out_to_rs_DUMMY(31 downto 0));
    
    XLXI_21 : MUX_Sumador
-      port map (branch=>XLXN_133,
-                inmediato(31 downto 0)=>XLXN_68_DUMMY(31 downto 0),
-                suma(5 downto 0)=>XLXN_145_DUMMY(5 downto 0),
+      port map (branch=>ctrl_branch_DUMMY,
+                inmediato(31 downto 0)=>extensor_s_inm_DUMMY(31 downto 0),
+                suma(5 downto 0)=>sumador_out_DUMMY(5 downto 0),
                 zero=>XLXN_157,
-                suma_out(5 downto 0)=>XLXN_92_DUMMY(5 downto 0));
+                suma_out(5 downto 0)=>ent_pc_DUMMY(5 downto 0));
    
    XLXI_22 : MUX32_MD
-      port map (alu_result(31 downto 0)=>XLXN_163_DUMMY(31 downto 0),
+      port map (alu_result(31 downto 0)=>alu_result_DUMMY(31 downto 0),
                 mem_dato_out(31 downto 0)=>XLXN_164_DUMMY(31 downto 0),
-                mem_to_reg_ctrl=>XLXN_167,
-                write_data(31 downto 0)=>XLXN_165_DUMMY(31 downto 0));
+                mem_to_reg_ctrl=>ctrl_mem_to_reg_DUMMY,
+                write_data(31 downto 0)=>write_data_dato3_DUMMY(31 downto 0));
    
 end BEHAVIORAL;
 

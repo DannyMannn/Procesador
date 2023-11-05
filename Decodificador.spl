@@ -1,4 +1,5 @@
 [Inputs]
+clk
 =instruccion[31:0]=
 [Outputs]
 =operacion[5:0]=

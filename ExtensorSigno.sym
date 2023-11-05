@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="ExtensorSigno">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2023-11-3T2:7:15</timestamp>
+    <timestamp>2023-11-5T2:49:11</timestamp>
     <pin polarity="Input" x="0" y="-32" name="inmediato_in(15:0)" />
     <pin polarity="Output" x="544" y="-32" name="inmediato_out(31:0)" />
     <graph>

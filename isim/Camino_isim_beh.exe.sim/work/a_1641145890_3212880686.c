@@ -77,7 +77,25 @@ LAB2:    xsi_set_current_line(54, ng0);
     if (t10 != 0)
         goto LAB8;
 
-LAB10:
+LAB10:    xsi_set_current_line(58, ng0);
+    t2 = (t0 + 1832U);
+    t4 = *((char **)t2);
+    t2 = (t0 + 1672U);
+    t5 = *((char **)t2);
+    t2 = (t0 + 6376U);
+    t13 = ieee_p_3620187407_sub_5109402382352621412_3965413181(IEEE_P_3620187407, t5, t2);
+    t14 = (t13 - 31);
+    t15 = (t14 * -1);
+    t16 = (32U * t15);
+    t17 = (0U + t16);
+    t8 = (t0 + 3992);
+    t11 = (t8 + 56U);
+    t12 = *((char **)t11);
+    t18 = (t12 + 56U);
+    t19 = *((char **)t18);
+    memcpy(t19, t4, 32U);
+    xsi_driver_first_trans_delta(t8, t17, 32U, 0LL);
+
 LAB9:    goto LAB3;
 
 LAB5:    t4 = (t0 + 1032U);
@@ -92,7 +110,7 @@ LAB8:    xsi_set_current_line(55, ng0);
     t11 = *((char **)t4);
     t4 = (t0 + 1352U);
     t12 = *((char **)t4);
-    t4 = (t0 + 6280U);
+    t4 = (t0 + 6344U);
     t13 = ieee_p_3620187407_sub_5109402382352621412_3965413181(IEEE_P_3620187407, t12, t4);
     t14 = (t13 - 31);
     t15 = (t14 * -1);
@@ -112,7 +130,7 @@ LAB8:    xsi_set_current_line(55, ng0);
     t4 = *((char **)t2);
     t2 = (t0 + 1512U);
     t5 = *((char **)t2);
-    t2 = (t0 + 6296U);
+    t2 = (t0 + 6360U);
     t13 = ieee_p_3620187407_sub_5109402382352621412_3965413181(IEEE_P_3620187407, t5, t2);
     t14 = (t13 - 31);
     t15 = (t14 * -1);

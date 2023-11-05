@@ -2,3 +2,5 @@ vhdtdtfi -lib work ExtensorSigno.vhd -prj Procesador -o ExtensorSigno.spl -modul
 spl2sym -intstyle ise -family spartan6 -w ExtensorSigno.spl /home/ise/Documents/Procesador/ExtensorSigno.sym 
 vhdtdtfi -lib work ExtensorSigno.vhd -prj Procesador -o ExtensorSigno.spl -module ExtensorSigno -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
 spl2sym -intstyle ise -family spartan6 -w ExtensorSigno.spl /home/ise/Documents/Procesador/ExtensorSigno.sym 
+vhdtdtfi -lib work ExtensorSigno.vhd -prj Procesador -o ExtensorSigno.spl -module ExtensorSigno -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 -w ExtensorSigno.spl /home/ise/Downloads/Procesador-main/ExtensorSigno.sym 

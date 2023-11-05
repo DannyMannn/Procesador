@@ -1,18 +1,21 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.7 - xst P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:/Users/david/Procesador-main/Procesador-main/xst/projnav.tmp
+--> 
+Parameter TMPDIR set to /home/ise/Downloads/Procesador-main/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.22 secs
+Total CPU time to Xst completion: 0.42 secs
  
---> Parameter xsthdpdir set to C:/Users/david/Procesador-main/Procesador-main/xst
+--> 
+Parameter xsthdpdir set to /home/ise/Downloads/Procesador-main/xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.22 secs
+Total CPU time to Xst completion: 0.43 secs
  
---> Reading design: MemoriaRegistros.prj
+--> 
+Reading design: MemoriaRegistros.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -39,17 +42,18 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\david\Procesador-main\Procesador-main\MemoriaRegistros.vhd" into library work
+Parsing VHDL file "/home/ise/Downloads/Procesador-main/MemoriaRegistros.vhd" into library work
 Parsing entity <MemoriaRegistros>.
 Parsing architecture <Behavioral> of entity <memoriaregistros>.
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.16 secs
+Total REAL time to Xst completion: 36.00 secs
+Total CPU time to Xst completion: 35.88 secs
  
 --> 
 
-Total memory usage is 4446296 kilobytes
+
+Total memory usage is 397800 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

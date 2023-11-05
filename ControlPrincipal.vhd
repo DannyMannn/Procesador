@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity ControlPrincipal is
     Port ( 
         clk : in STD_LOGIC;
-        operacion : in  STD_LOGIC_VECTOR (5 downto 0);
+        instruccion : in  STD_LOGIC_VECTOR (31 downto 0);
         reg_destino : out STD_LOGIC;
         branch : out STD_LOGIC;
         mem_write : out STD_LOGIC;
@@ -16,70 +16,76 @@ entity ControlPrincipal is
 end ControlPrincipal;
 
 architecture Behavioral of ControlPrincipal is
-   TYPE estados is (E0, E1, E2, E3, E4);		--lista estados
-	SIGNAL estado_presente, estado_siguiente: estados;
+    signal operacion : STD_LOGIC_VECTOR (5 downto 0);
 begin
     
-    process (clk, operacion) begin
-        case estado_presente is
-            when E0 =>
-                reg_destino <= '1';
-                branch <= '0';
-                mem_write <= '0';
-                mem_read <= '0';
-                mem_to_reg <= '0';
-                reg_write <= '0';
-                alu_src <= '0';
-                estado_siguiente <= E1;
-            when E1 =>
-                reg_destino <= '0';
-                branch <= '0';
-                mem_write <= '0';
-                mem_read <= '0';
-                mem_to_reg <= '0';
-                reg_write <= '0';
-                if (operacion = "000001") then
+    process (instruccion)
+    begin
+        operacion <= instruccion(31 downto 26);
+    end process;
+    
+    process (clk, operacion)
+    begin
+        if (clk='1' and clk'event) then
+            case operacion is
+                when "000001" => -- Tipo R
+                    reg_destino <= '0';
+                    branch <= '0';
+                    mem_write <= '0';
+                    mem_read <= '0';
+                    mem_to_reg <= '0';
+                    reg_write <= '1';
                     alu_src <= '0';
-                else
+                when "000010" => -- Tipo J
+                    reg_destino <= '1';
+                    branch <= '1';
+                    mem_write <= '0';
+                    mem_read <= '0';
+                    mem_to_reg <= '0';
+                    reg_write <= '0';
                     alu_src <= '1';
-                end if;
-                estado_siguiente <= E2;
-            when E2 =>
-                reg_destino <= '0';
-                branch <= '0';
-                mem_read <= '0';
-                mem_to_reg <= '0';
-                reg_write <= '0';
-                if (operacion = "000101") then
+                when "000011" => -- Tipo I beq
+                    reg_destino <= '1';
+                    branch <= '1';
+                    mem_write <= '0';
+                    mem_read <= '0';
+                    mem_to_reg <= '0';
+                    reg_write <= '0';
+                    alu_src <= '1';
+                when "000100" => -- Tipo I bne
+                    reg_destino <= '1';
+                    branch <= '1';
+                    mem_write <= '0';
+                    mem_read <= '0';
+                    mem_to_reg <= '0';
+                    reg_write <= '0';
+                    alu_src <= '1';
+                when "000101" => -- Tipo I sw
+                    reg_destino <= '1';
+                    branch <= '0';
                     mem_write <= '1';
                     mem_read <= '0';
-                else 
-                    if (operacion = "000110") then
-                        mem_read <= '1';
-                        mem_write <= '0';
-                    end if;
-                end if;
-                estado_siguiente <= E3;
-            when E3 =>
-                reg_destino <= '0';
-                branch <= '0';
-                mem_write <= '0';
-                mem_read <= '0';
-                mem_to_reg <= '1';
-                reg_write <= '0';
-                alu_src <= '0';
-                estado_siguiente <= E4;
-            when E4 =>
-                reg_destino <= '0';
-                branch <= '1';
-                mem_write <= '0';
-                mem_read <= '0';
-                mem_to_reg <= '0';
-                reg_write <= '0';
-                alu_src <= '0';
-                estado_siguiente <= E0;
-        end case;
-        
+                    mem_to_reg <= '0';
+                    reg_write <= '0';
+                    alu_src <= '1';
+                when "000110" => -- Tipo I lw
+                    reg_destino <= '1';
+                    branch <= '0';
+                    mem_write <= '0';
+                    mem_read <= '1';
+                    mem_to_reg <= '1';
+                    reg_write <= '1';
+                    alu_src <= '1';
+                when others =>
+                    reg_destino <= '0';
+                    branch <= '0';
+                    mem_write <= '0';
+                    mem_read <= '0';
+                    mem_to_reg <= '0';
+                    reg_write <= '0';
+                    alu_src <= '0';
+            end case;
+        end if;
     end process;
     
 end Behavioral;
