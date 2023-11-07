@@ -1,5 +1,6 @@
 [Inputs]
 clk
+we
 reg_write
 =rs[4:0]=
 =rt[4:0]=

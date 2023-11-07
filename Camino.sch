@@ -40,6 +40,7 @@
         <signal name="gen_ciclos_clk" />
         <signal name="ent_pc(5:0)" />
         <signal name="mux32bi_out_to_rs(31:0)" />
+        <signal name="XLXN_175" />
         <port polarity="Output" name="rout_pc(5:0)" />
         <port polarity="Output" name="pc_clk" />
         <port polarity="Output" name="mem_inst_clk" />
@@ -122,7 +123,8 @@
             <rect width="416" x="64" y="-384" height="960" />
         </blockdef>
         <blockdef name="MemoriaRegistros">
-            <timestamp>2023-11-5T3:52:54</timestamp>
+            <timestamp>2023-11-6T15:30:1</timestamp>
+            <line x2="0" y1="672" y2="672" x1="64" />
             <line x2="0" y1="288" y2="288" x1="64" />
             <rect width="64" x="0" y="20" height="24" />
             <line x2="0" y1="32" y2="32" x1="64" />
@@ -137,7 +139,7 @@
             <line x2="384" y1="-416" y2="-416" x1="320" />
             <rect width="64" x="320" y="-44" height="24" />
             <line x2="384" y1="-32" y2="-32" x1="320" />
-            <rect width="256" x="64" y="-448" height="768" />
+            <rect width="256" x="64" y="-448" height="1152" />
         </blockdef>
         <blockdef name="ALU">
             <timestamp>2023-11-5T4:26:50</timestamp>
@@ -155,7 +157,8 @@
             <rect width="336" x="64" y="-192" height="512" />
         </blockdef>
         <blockdef name="GeneradorCiclos">
-            <timestamp>2023-11-5T4:19:52</timestamp>
+            <timestamp>2023-11-6T15:29:41</timestamp>
+            <line x2="384" y1="160" y2="160" x1="320" />
             <line x2="384" y1="96" y2="96" x1="320" />
             <line x2="384" y1="32" y2="32" x1="320" />
             <line x2="0" y1="-288" y2="-288" x1="64" />
@@ -164,7 +167,7 @@
             <line x2="384" y1="-160" y2="-160" x1="320" />
             <line x2="384" y1="-96" y2="-96" x1="320" />
             <line x2="384" y1="-32" y2="-32" x1="320" />
-            <rect width="256" x="64" y="-320" height="448" />
+            <rect width="256" x="64" y="-320" height="512" />
         </blockdef>
         <blockdef name="MemDatos">
             <timestamp>2023-11-4T4:51:6</timestamp>
@@ -282,6 +285,7 @@
             <blockpin signalname="write_data_dato3(31:0)" name="dato3(31:0)" />
             <blockpin signalname="mem_reg_dato1(31:0)" name="dato1(31:0)" />
             <blockpin signalname="mem_reg_dato2(31:0)" name="dato2(31:0)" />
+            <blockpin signalname="XLXN_175" name="we" />
         </block>
         <block symbolname="ALU" name="XLXI_7">
             <blockpin signalname="mem_reg_dato1(31:0)" name="rs(31:0)" />
@@ -300,6 +304,7 @@
             <blockpin signalname="mem_datos_clk" name="E" />
             <blockpin signalname="ctrl_princ_clk" name="F" />
             <blockpin signalname="decod_clk" name="G" />
+            <blockpin signalname="XLXN_175" name="H" />
         </block>
         <block symbolname="MemDatos" name="XLXI_11">
             <blockpin signalname="mem_datos_clk" name="clk" />
@@ -355,7 +360,9 @@
             <wire x2="768" y1="1456" y2="1456" x1="704" />
             <wire x2="1024" y1="1456" y2="1456" x1="768" />
             <wire x2="1472" y1="1456" y2="1456" x1="1024" />
-            <wire x2="768" y1="1376" y2="1456" x1="768" />
+            <wire x2="768" y1="1408" y2="1456" x1="768" />
+            <wire x2="832" y1="1408" y2="1408" x1="768" />
+            <wire x2="832" y1="1360" y2="1408" x1="832" />
             <wire x2="1472" y1="1120" y2="1120" x1="1024" />
             <wire x2="1024" y1="1120" y2="1456" x1="1024" />
         </branch>
@@ -452,7 +459,8 @@
             <wire x2="2704" y1="1600" y2="2752" x1="2704" />
             <wire x2="3024" y1="2752" y2="2752" x1="2704" />
             <wire x2="3072" y1="1600" y2="1600" x1="2704" />
-            <wire x2="3072" y1="1088" y2="1088" x1="2976" />
+            <wire x2="2992" y1="1088" y2="1088" x1="2976" />
+            <wire x2="3072" y1="1088" y2="1088" x1="2992" />
             <wire x2="3072" y1="1088" y2="1600" x1="3072" />
         </branch>
         <branch name="XLXN_157">
@@ -565,7 +573,6 @@
         </branch>
         <instance x="4176" y="1648" name="XLXI_7" orien="R0">
         </instance>
-        <iomarker fontsize="28" x="768" y="1376" name="rout_pc(5:0)" orien="R270" />
         <branch name="salida_mem_inst(31:0)">
             <wire x2="1968" y1="1600" y2="1600" x1="688" />
             <wire x2="688" y1="1600" y2="1840" x1="688" />
@@ -661,5 +668,14 @@
             <wire x2="4176" y1="1936" y2="1936" x1="4064" />
         </branch>
         <iomarker fontsize="28" x="4144" y="3232" name="mux32bi_out_to_rs(31:0)" orien="R0" />
+        <iomarker fontsize="28" x="832" y="1360" name="rout_pc(5:0)" orien="R270" />
+        <branch name="XLXN_175">
+            <wire x2="752" y1="1216" y2="1216" x1="736" />
+            <wire x2="784" y1="1216" y2="1216" x1="752" />
+            <wire x2="784" y1="672" y2="1216" x1="784" />
+            <wire x2="2480" y1="672" y2="672" x1="784" />
+            <wire x2="2480" y1="672" y2="3136" x1="2480" />
+            <wire x2="3024" y1="3136" y2="3136" x1="2480" />
+        </branch>
     </sheet>
 </drawing>

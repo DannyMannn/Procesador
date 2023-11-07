@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity MemoriaRegistros is
     Port (
-        clk : in STD_LOGIC;
+        clk, we : in STD_LOGIC;
         reg_write : in STD_LOGIC; -- originalmente we
         rs : in  STD_LOGIC_VECTOR (4 downto 0);
         rt : in  STD_LOGIC_VECTOR (4 downto 0);
@@ -48,16 +48,20 @@ architecture Behavioral of MemoriaRegistros is
         );
 
 begin
-	process (clk, rs, rt, rd, reg_write)
+	process (clk, rs, rt)
     begin
-        if (clk'event and clk='0') then
-            if reg_write = '0' then
-                dato1 <= RAM(conv_integer(rs));
-                dato2 <= RAM(conv_integer(rt));
-            else -- reg_write = '1'
+        if (clk'event and clk='1') then
+            dato1 <= RAM(conv_integer(rs));
+            dato2 <= RAM(conv_integer(rt));
+        end if;
+    end process;
+    
+    process (we, rd, reg_write)
+    begin
+        if (we'event and we='1') then
+            if (reg_write = '1') then
                 RAM(conv_integer(rd)) <= dato3;
             end if;
         end if;
     end process;
-
 end Behavioral;

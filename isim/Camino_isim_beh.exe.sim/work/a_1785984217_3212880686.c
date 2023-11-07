@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0xfbc00daa */
+/* This file is designed for use with ISim build 0x7708f090 */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ise/Downloads/Procesador-main/MUX_Sumador.vhd";
+static const char *ng0 = "C:/Users/david/Procesador-main/MUX_Sumador.vhd";
 
 
 
@@ -75,7 +75,7 @@ LAB7:    if (t1 != 0)
 LAB4:    xsi_set_current_line(22, ng0);
     t2 = (t0 + 1192U);
     t3 = *((char **)t2);
-    t2 = (t0 + 3224);
+    t2 = (t0 + 3232);
     t6 = (t2 + 56U);
     t9 = *((char **)t6);
     t12 = (t9 + 56U);
@@ -83,14 +83,14 @@ LAB4:    xsi_set_current_line(22, ng0);
     memcpy(t13, t3, 6U);
     xsi_driver_first_trans_fast_port(t2);
 
-LAB3:    t2 = (t0 + 3144);
+LAB3:    t2 = (t0 + 3152);
     *((int *)t2) = 1;
 
 LAB1:    return;
 LAB2:    xsi_set_current_line(18, ng0);
-    t2 = (t0 + 5008);
+    t2 = (t0 + 5012);
     *((int *)t2) = 0;
-    t9 = (t0 + 5012);
+    t9 = (t0 + 5016);
     *((int *)t9) = 5;
     t10 = 0;
     t11 = 5;
@@ -110,7 +110,7 @@ LAB5:    t2 = (t0 + 1512U);
 LAB9:    xsi_set_current_line(19, ng0);
     t12 = (t0 + 1032U);
     t13 = *((char **)t12);
-    t12 = (t0 + 5008);
+    t12 = (t0 + 5012);
     t14 = *((int *)t12);
     t15 = (t14 - 31);
     t16 = (t15 * -1);
@@ -119,13 +119,13 @@ LAB9:    xsi_set_current_line(19, ng0);
     t18 = (0 + t17);
     t19 = (t13 + t18);
     t20 = *((unsigned char *)t19);
-    t21 = (t0 + 5008);
+    t21 = (t0 + 5012);
     t22 = *((int *)t21);
     t23 = (t22 - 5);
     t24 = (t23 * -1);
     t25 = (1 * t24);
     t26 = (0U + t25);
-    t27 = (t0 + 3224);
+    t27 = (t0 + 3232);
     t28 = (t27 + 56U);
     t29 = *((char **)t28);
     t30 = (t29 + 56U);
@@ -133,16 +133,16 @@ LAB9:    xsi_set_current_line(19, ng0);
     *((unsigned char *)t31) = t20;
     xsi_driver_first_trans_delta(t27, t26, 1, 0LL);
 
-LAB10:    t2 = (t0 + 5008);
+LAB10:    t2 = (t0 + 5012);
     t10 = *((int *)t2);
-    t3 = (t0 + 5012);
+    t3 = (t0 + 5016);
     t11 = *((int *)t3);
     if (t10 == t11)
         goto LAB11;
 
 LAB12:    t14 = (t10 + 1);
     t10 = t14;
-    t6 = (t0 + 5008);
+    t6 = (t0 + 5012);
     *((int *)t6) = t10;
     goto LAB8;
 

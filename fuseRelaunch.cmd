@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/Downloads/Procesador-main/Camino_isim_beh.exe" -prj "/home/ise/Downloads/Procesador-main/Camino_beh.prj" "work.Camino" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/david/Procesador-main/Camino_isim_beh.exe" -prj "C:/Users/david/Procesador-main/Camino_beh.prj" "work.Camino" 

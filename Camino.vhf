@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Camino.vhf
--- /___/   /\     Timestamp : 11/05/2023 06:29:57
+-- /___/   /\     Timestamp : 11/06/2023 09:53:48
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl /home/ise/Downloads/Procesador-main/Camino.vhf -w /home/ise/Downloads/Procesador-main/Camino.sch
+--Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl C:/Users/david/Procesador-main/Camino.vhf -w C:/Users/david/Procesador-main/Camino.sch
 --Design Name: Camino
 --Device: spartan6
 --Purpose:
@@ -63,6 +63,7 @@ architecture BEHAVIORAL of Camino is
    signal XLXN_154                : std_logic;
    signal XLXN_157                : std_logic;
    signal XLXN_174                : std_logic_vector (5 downto 0);
+   signal XLXN_175                : std_logic;
    signal ctrl_mem_to_reg_DUMMY   : std_logic;
    signal ctrl_mem_write_DUMMY    : std_logic;
    signal ctrl_alu_src_DUMMY      : std_logic;
@@ -132,7 +133,8 @@ architecture BEHAVIORAL of Camino is
              rd        : in    std_logic_vector (4 downto 0); 
              dato3     : in    std_logic_vector (31 downto 0); 
              dato1     : out   std_logic_vector (31 downto 0); 
-             dato2     : out   std_logic_vector (31 downto 0));
+             dato2     : out   std_logic_vector (31 downto 0); 
+             we        : in    std_logic);
    end component;
    
    component ALU
@@ -152,7 +154,8 @@ architecture BEHAVIORAL of Camino is
              D   : out   std_logic; 
              E   : out   std_logic; 
              F   : out   std_logic; 
-             G   : out   std_logic);
+             G   : out   std_logic; 
+             H   : out   std_logic);
    end component;
    
    component MemDatos
@@ -275,6 +278,7 @@ begin
                 reg_write=>XLXN_154,
                 rs(4 downto 0)=>decod_rs_DUMMY(4 downto 0),
                 rt(4 downto 0)=>decod_rt_DUMMY(4 downto 0),
+                we=>XLXN_175,
                 dato1(31 downto 0)=>mem_reg_dato1_DUMMY(31 downto 0),
                 dato2(31 downto 0)=>mem_reg_dato2_DUMMY(31 downto 0));
    
@@ -294,7 +298,8 @@ begin
                 D=>mem_reg_clk_DUMMY,
                 E=>mem_datos_clk_DUMMY,
                 F=>ctrl_princ_clk_DUMMY,
-                G=>decod_clk_DUMMY);
+                G=>decod_clk_DUMMY,
+                H=>XLXN_175);
    
    XLXI_11 : MemDatos
       port map (addr(31 downto 0)=>alu_result_DUMMY(31 downto 0),
