@@ -1,7 +1,9 @@
 [Inputs]
 branch
 zero
+jump
 =inmediato[31:0]=
+=direccion[25:0]=
 =suma[5:0]=
 [Outputs]
 =suma_out[5:0]=

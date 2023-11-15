@@ -5,14 +5,14 @@ Parameter TMPDIR set to /home/ise/Documents/Procesador/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.40 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> 
 Parameter xsthdpdir set to /home/ise/Documents/Procesador/xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.40 secs
+Total CPU time to Xst completion: 0.42 secs
  
 --> 
 Reading design: MUX_Sumador.prj
@@ -48,12 +48,12 @@ Parsing architecture <Behavioral> of entity <mux_sumador>.
 
 
 Total REAL time to Xst completion: 32.00 secs
-Total CPU time to Xst completion: 32.14 secs
+Total CPU time to Xst completion: 31.61 secs
  
 --> 
 
 
-Total memory usage is 396900 kilobytes
+Total memory usage is 397892 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

@@ -1,25 +1,27 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/david/Procesador-main/Camino_isim_beh.exe -prj C:/Users/david/Procesador-main/Camino_beh.prj work.Camino 
-ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 2
-Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/Documents/Procesador/Camino_isim_beh.exe -prj /home/ise/Documents/Procesador/Camino_beh.prj work.Camino 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 6
+Turning on mult-threading, number of parallel sub-compilation jobs: 12 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/david/Procesador-main/SUMADOR.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/PC.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/MUX_Sumador.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/MUX5Bits.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/MUX32_MD.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/MUX32Bits.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/MemoriaRegistros.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/MemoriaInstrucciones.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/MemDatos.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/GeneradorCiclos.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/ExtensorSigno.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/Decodificador.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/ControlPrincipal.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/ALU.vhd" into library work
-Parsing VHDL file "C:/Users/david/Procesador-main/Camino.vhf" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/SUMADOR.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/PC.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/MUX_Sumador.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/MUX5Bits.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/MUX32_MD.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/MUX32Bits.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/MemoriaRegistros.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/MemoriaInstrucciones.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/MemDatos.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/GeneradorCiclos.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/ExtensorSigno.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/Decodificador.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/ControlPrincipal.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/ALU.vhd" into library work
+Parsing VHDL file "/home/ise/Documents/Procesador/Camino.vhf" into library work
 Starting static elaboration
 Completed static elaboration
+Fuse Memory Usage: 114392 KB
+Fuse CPU Usage: 6490 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -42,8 +44,9 @@ Compiling architecture behavioral of entity MUX_Sumador [mux_sumador_default]
 Compiling architecture behavioral of entity MUX32_MD [mux32_md_default]
 Compiling architecture behavioral of entity camino
 Time Resolution for simulation is 1ps.
-Waiting for 17 sub-compilation(s) to finish...
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 35 VHDL Units
-Built simulation executable C:/Users/david/Procesador-main/Camino_isim_beh.exe
-Fuse Memory Usage: 52532 KB
-Fuse CPU Usage: 1280 ms
+Built simulation executable /home/ise/Documents/Procesador/Camino_isim_beh.exe
+Fuse Memory Usage: 951604 KB
+Fuse CPU Usage: 8130 ms
+GCC CPU Usage: 5900 ms

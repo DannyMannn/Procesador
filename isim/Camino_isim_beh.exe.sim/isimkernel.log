@@ -2,23 +2,28 @@ Command line:
    Camino_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  51083
+     -socket  45769
 
-Mon Nov 06 09:54:03 2023
+Wed Nov 15 19:23:35 2023
 
 
- Elaboration Time: 0.078125 sec
+ Elaboration Time: 0.38 sec
 
- Current Memory Usage: 4996.83 Meg
+ Current Memory Usage: 218.235 Meg
 
- Total Signals          : 175
- Total Nets             : 2850
- Total Signal Drivers   : 74
+ Total Signals          : 181
+ Total Nets             : 2857
+ Total Signal Drivers   : 76
  Total Blocks           : 20
  Total Primitive Blocks : 19
  Total Processes        : 48
  Total Traceable Variables  : 16
- Total Scalar Nets and Variables : 3735
-Total Line Count : 246
-In process MemoriaInstrucciones.vhd:31 
- 
+ Total Scalar Nets and Variables : 3742
+Total Line Count : 260
+
+ Total Simulation Time: 3.58 sec
+
+ Current Memory Usage: 295.834 Meg
+
+Wed Nov 15 19:27:38 2023
+

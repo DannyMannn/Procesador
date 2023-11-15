@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Camino.vhf
--- /___/   /\     Timestamp : 11/06/2023 09:53:48
+-- /___/   /\     Timestamp : 11/15/2023 19:23:13
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl C:/Users/david/Procesador-main/Camino.vhf -w C:/Users/david/Procesador-main/Camino.sch
+--Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl /home/ise/Documents/Procesador/Camino.vhf -w /home/ise/Documents/Procesador/Camino.sch
 --Design Name: Camino
 --Device: spartan6
 --Purpose:
@@ -64,6 +64,8 @@ architecture BEHAVIORAL of Camino is
    signal XLXN_157                : std_logic;
    signal XLXN_174                : std_logic_vector (5 downto 0);
    signal XLXN_175                : std_logic;
+   signal XLXN_176                : std_logic;
+   signal XLXN_177                : std_logic_vector (25 downto 0);
    signal ctrl_mem_to_reg_DUMMY   : std_logic;
    signal ctrl_mem_write_DUMMY    : std_logic;
    signal ctrl_alu_src_DUMMY      : std_logic;
@@ -183,7 +185,8 @@ architecture BEHAVIORAL of Camino is
              mem_read    : out   std_logic; 
              mem_to_reg  : out   std_logic; 
              reg_write   : out   std_logic; 
-             alu_src     : out   std_logic);
+             alu_src     : out   std_logic; 
+             jump        : out   std_logic);
    end component;
    
    component ExtensorSigno
@@ -201,7 +204,9 @@ architecture BEHAVIORAL of Camino is
    component MUX_Sumador
       port ( branch    : in    std_logic; 
              zero      : in    std_logic; 
+             jump      : in    std_logic; 
              inmediato : in    std_logic_vector (31 downto 0); 
+             direccion : in    std_logic_vector (25 downto 0); 
              suma      : in    std_logic_vector (5 downto 0); 
              suma_out  : out   std_logic_vector (5 downto 0));
    end component;
@@ -263,7 +268,7 @@ begin
       port map (clk=>decod_clk_DUMMY,
                 instruccion(31 downto 0)=>salida_mem_inst_DUMMY(31 downto 0),
                 codigo_operacion(5 downto 0)=>decod_cod_op_DUMMY(5 downto 0),
-                direccion=>open,
+                direccion(25 downto 0)=>XLXN_177(25 downto 0),
                 inmediato(15 downto 0)=>decod_inmediato_DUMMY(15 downto 0),
                 operacion(5 downto 0)=>XLXN_174(5 downto 0),
                 rd(4 downto 0)=>decod_rd_DUMMY(4 downto 0),
@@ -320,6 +325,7 @@ begin
                 instruccion(31 downto 0)=>salida_mem_inst_DUMMY(31 downto 0),
                 alu_src=>ctrl_alu_src_DUMMY,
                 branch=>ctrl_branch_DUMMY,
+                jump=>XLXN_176,
                 mem_read=>ctrl_mem_read_DUMMY,
                 mem_to_reg=>ctrl_mem_to_reg_DUMMY,
                 mem_write=>ctrl_mem_write_DUMMY,
@@ -338,7 +344,9 @@ begin
    
    XLXI_21 : MUX_Sumador
       port map (branch=>ctrl_branch_DUMMY,
+                direccion(25 downto 0)=>XLXN_177(25 downto 0),
                 inmediato(31 downto 0)=>extensor_s_inm_DUMMY(31 downto 0),
+                jump=>XLXN_176,
                 suma(5 downto 0)=>sumador_out_DUMMY(5 downto 0),
                 zero=>XLXN_157,
                 suma_out(5 downto 0)=>ent_pc_DUMMY(5 downto 0));

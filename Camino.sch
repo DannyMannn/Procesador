@@ -41,6 +41,8 @@
         <signal name="ent_pc(5:0)" />
         <signal name="mux32bi_out_to_rs(31:0)" />
         <signal name="XLXN_175" />
+        <signal name="XLXN_176" />
+        <signal name="XLXN_177(25:0)" />
         <port polarity="Output" name="rout_pc(5:0)" />
         <port polarity="Output" name="pc_clk" />
         <port polarity="Output" name="mem_inst_clk" />
@@ -91,7 +93,7 @@
             <line x2="384" y1="-96" y2="-96" x1="320" />
         </blockdef>
         <blockdef name="MemoriaInstrucciones">
-            <timestamp>2023-11-5T3:47:23</timestamp>
+            <timestamp>2023-11-15T18:56:26</timestamp>
             <rect width="256" x="64" y="-128" height="128" />
             <line x2="0" y1="-96" y2="-96" x1="64" />
             <rect width="64" x="0" y="-44" height="24" />
@@ -142,7 +144,7 @@
             <rect width="256" x="64" y="-448" height="1152" />
         </blockdef>
         <blockdef name="ALU">
-            <timestamp>2023-11-5T4:26:50</timestamp>
+            <timestamp>2023-11-15T19:21:42</timestamp>
             <rect width="64" x="0" y="212" height="24" />
             <line x2="0" y1="224" y2="224" x1="64" />
             <rect width="64" x="0" y="276" height="24" />
@@ -183,8 +185,10 @@
             <line x2="384" y1="-288" y2="-288" x1="320" />
         </blockdef>
         <blockdef name="MUX_Sumador">
-            <timestamp>2023-11-3T2:2:38</timestamp>
-            <rect width="336" x="64" y="-256" height="256" />
+            <timestamp>2023-11-15T19:11:17</timestamp>
+            <line x2="0" y1="32" y2="32" x1="64" />
+            <rect width="64" x="0" y="84" height="24" />
+            <line x2="0" y1="96" y2="96" x1="64" />
             <line x2="0" y1="-224" y2="-224" x1="64" />
             <line x2="0" y1="-160" y2="-160" x1="64" />
             <rect width="64" x="0" y="-108" height="24" />
@@ -193,6 +197,7 @@
             <line x2="0" y1="-32" y2="-32" x1="64" />
             <rect width="64" x="400" y="-236" height="24" />
             <line x2="464" y1="-224" y2="-224" x1="400" />
+            <rect width="336" x="64" y="-256" height="384" />
         </blockdef>
         <blockdef name="ExtensorSigno">
             <timestamp>2023-11-5T2:49:11</timestamp>
@@ -203,7 +208,8 @@
             <line x2="544" y1="-32" y2="-32" x1="480" />
         </blockdef>
         <blockdef name="ControlPrincipal">
-            <timestamp>2023-11-5T4:19:25</timestamp>
+            <timestamp>2023-11-15T19:19:11</timestamp>
+            <line x2="432" y1="160" y2="160" x1="368" />
             <rect width="64" x="0" y="84" height="24" />
             <line x2="0" y1="96" y2="96" x1="64" />
             <line x2="432" y1="32" y2="32" x1="368" />
@@ -214,7 +220,7 @@
             <line x2="432" y1="-160" y2="-160" x1="368" />
             <line x2="432" y1="-96" y2="-96" x1="368" />
             <line x2="432" y1="-32" y2="-32" x1="368" />
-            <rect width="304" x="64" y="-384" height="512" />
+            <rect width="304" x="64" y="-384" height="576" />
         </blockdef>
         <blockdef name="MUX5Bits">
             <timestamp>2023-11-3T2:3:45</timestamp>
@@ -273,7 +279,7 @@
             <blockpin signalname="decod_rd(4:0)" name="rd(4:0)" />
             <blockpin name="shamt(4:0)" />
             <blockpin signalname="decod_inmediato(15:0)" name="inmediato(15:0)" />
-            <blockpin name="direccion(25:0)" />
+            <blockpin signalname="XLXN_177(25:0)" name="direccion(25:0)" />
             <blockpin signalname="decod_cod_op(5:0)" name="codigo_operacion(5:0)" />
         </block>
         <block symbolname="MemoriaRegistros" name="XLXI_6">
@@ -330,6 +336,7 @@
             <blockpin signalname="ctrl_mem_to_reg" name="mem_to_reg" />
             <blockpin signalname="XLXN_154" name="reg_write" />
             <blockpin signalname="ctrl_alu_src" name="alu_src" />
+            <blockpin signalname="XLXN_176" name="jump" />
         </block>
         <block symbolname="ExtensorSigno" name="XLXI_19">
             <blockpin signalname="decod_inmediato(15:0)" name="inmediato_in(15:0)" />
@@ -344,7 +351,9 @@
         <block symbolname="MUX_Sumador" name="XLXI_21">
             <blockpin signalname="ctrl_branch" name="branch" />
             <blockpin signalname="XLXN_157" name="zero" />
+            <blockpin signalname="XLXN_176" name="jump" />
             <blockpin signalname="extensor_s_inm(31:0)" name="inmediato(31:0)" />
+            <blockpin signalname="XLXN_177(25:0)" name="direccion(25:0)" />
             <blockpin signalname="sumador_out(5:0)" name="suma(5:0)" />
             <blockpin signalname="ent_pc(5:0)" name="suma_out(5:0)" />
         </block>
@@ -676,6 +685,18 @@
             <wire x2="2480" y1="672" y2="672" x1="784" />
             <wire x2="2480" y1="672" y2="3136" x1="2480" />
             <wire x2="3024" y1="3136" y2="3136" x1="2480" />
+        </branch>
+        <branch name="XLXN_176">
+            <wire x2="3200" y1="1216" y2="1216" x1="2976" />
+            <wire x2="3200" y1="576" y2="1216" x1="3200" />
+            <wire x2="4464" y1="576" y2="576" x1="3200" />
+        </branch>
+        <branch name="XLXN_177(25:0)">
+            <wire x2="1376" y1="2288" y2="2288" x1="1312" />
+            <wire x2="1376" y1="2288" y2="2384" x1="1376" />
+            <wire x2="1920" y1="2384" y2="2384" x1="1376" />
+            <wire x2="1920" y1="640" y2="2384" x1="1920" />
+            <wire x2="4464" y1="640" y2="640" x1="1920" />
         </branch>
     </sheet>
 </drawing>

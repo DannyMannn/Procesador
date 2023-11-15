@@ -18,3 +18,7 @@ vhdtdtfi -lib work ControlPrincipal.vhd -prj Procesador -o ControlPrincipal.spl 
 spl2sym -intstyle ise -family spartan6 -w ControlPrincipal.spl C:/Users/david/Procesador-main/ControlPrincipal.sym 
 vhdtdtfi -lib work ControlPrincipal.vhd -prj Procesador -o ControlPrincipal.spl -module ControlPrincipal -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
 spl2sym -intstyle ise -family spartan6 -w ControlPrincipal.spl /home/ise/Downloads/Procesador-main/ControlPrincipal.sym 
+vhdtdtfi -lib work ControlPrincipal.vhd -prj Procesador -o ControlPrincipal.spl -module ControlPrincipal -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 -w ControlPrincipal.spl /home/ise/Documents/Procesador/ControlPrincipal.sym 
+vhdtdtfi -lib work ControlPrincipal.vhd -prj Procesador -o ControlPrincipal.spl -module ControlPrincipal -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 -w ControlPrincipal.spl /home/ise/Documents/Procesador/ControlPrincipal.sym 

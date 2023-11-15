@@ -41,19 +41,23 @@ process(rs, rt, codigo_operacion, operacion) begin
             zero <= '0';
       when "000010" => -- Tipo J
             resultado <= x"00000000";
-            zero <= '1';
+            zero <= '0';
 		when "000011" => -- Tipo I beq
 			if(rs = rt) then
 				resultado <= x"00000001";
+				zero <= '1';
 			else
 				resultado <= x"00000000";
+				zero <= '0';
 			end if;
-			zero <= '1';
+			
 		when "000100" => -- Tipo I bne
 			if(rs /= rt) then
 				resultado <= x"00000001";
+				zero <= '1';
 			else
 				resultado <= x"00000000";
+				zero <= '0';
 			end if;
 			zero <= '1';
 		when others => -- Tipo I lw y sw

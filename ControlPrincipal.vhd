@@ -11,7 +11,8 @@ entity ControlPrincipal is
         mem_read : out STD_LOGIC;
         mem_to_reg : out STD_LOGIC;
         reg_write : out STD_LOGIC;
-        alu_src : out STD_LOGIC
+        alu_src : out STD_LOGIC;
+		  jump: out STD_LOGIC
     );
 end ControlPrincipal;
 
@@ -36,14 +37,16 @@ begin
                     mem_to_reg <= '0';
                     reg_write <= '1';
                     alu_src <= '0';
+						  jump <= '0';
                 when "000010" => -- Tipo J
-                    reg_destino <= '1';
-                    branch <= '1';
+                    reg_destino <= '0';
+                    branch <= '0';
                     mem_write <= '0';
                     mem_read <= '0';
                     mem_to_reg <= '0';
                     reg_write <= '0';
-                    alu_src <= '1';
+                    alu_src <= '0';
+						  jump <= '1';
                 when "000011" => -- Tipo I beq
                     reg_destino <= '1';
                     branch <= '1';
@@ -51,7 +54,8 @@ begin
                     mem_read <= '0';
                     mem_to_reg <= '0';
                     reg_write <= '0';
-                    alu_src <= '1';
+                    alu_src <= '0';
+						  jump <= '0';
                 when "000100" => -- Tipo I bne
                     reg_destino <= '1';
                     branch <= '1';
@@ -59,7 +63,8 @@ begin
                     mem_read <= '0';
                     mem_to_reg <= '0';
                     reg_write <= '0';
-                    alu_src <= '1';
+                    alu_src <= '0';
+						  jump <= '0';
                 when "000101" => -- Tipo I sw
                     reg_destino <= '1';
                     branch <= '0';
@@ -68,6 +73,7 @@ begin
                     mem_to_reg <= '0';
                     reg_write <= '0';
                     alu_src <= '1';
+						  jump <= '0';
                 when "000110" => -- Tipo I lw
                     reg_destino <= '1';
                     branch <= '0';
@@ -76,6 +82,7 @@ begin
                     mem_to_reg <= '1';
                     reg_write <= '1';
                     alu_src <= '1';
+						  jump <= '0';
                 when others =>
                     reg_destino <= '0';
                     branch <= '0';
@@ -84,6 +91,7 @@ begin
                     mem_to_reg <= '0';
                     reg_write <= '0';
                     alu_src <= '0';
+						  jump <= '0';
             end case;
         end if;
     end process;
