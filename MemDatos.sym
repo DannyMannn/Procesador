@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="MemDatos">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2023-11-4T4:51:6</timestamp>
+    <timestamp>2023-11-29T2:2:50</timestamp>
     <pin polarity="Input" x="0" y="-288" name="clk" />
     <pin polarity="Input" x="0" y="-224" name="mem_write" />
     <pin polarity="Input" x="0" y="-160" name="mem_read" />

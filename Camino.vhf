@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Camino.vhf
--- /___/   /\     Timestamp : 11/15/2023 19:23:13
+-- /___/   /\     Timestamp : 11/29/2023 02:03:40
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -66,6 +66,8 @@ architecture BEHAVIORAL of Camino is
    signal XLXN_175                : std_logic;
    signal XLXN_176                : std_logic;
    signal XLXN_177                : std_logic_vector (25 downto 0);
+   signal XLXN_180                : std_logic;
+   signal XLXN_181                : std_logic;
    signal ctrl_mem_to_reg_DUMMY   : std_logic;
    signal ctrl_mem_write_DUMMY    : std_logic;
    signal ctrl_alu_src_DUMMY      : std_logic;
@@ -129,14 +131,16 @@ architecture BEHAVIORAL of Camino is
    
    component MemoriaRegistros
       port ( clk       : in    std_logic; 
+             we        : in    std_logic; 
              reg_write : in    std_logic; 
+             lw        : in    std_logic; 
+             sw        : in    std_logic; 
              rs        : in    std_logic_vector (4 downto 0); 
              rt        : in    std_logic_vector (4 downto 0); 
              rd        : in    std_logic_vector (4 downto 0); 
              dato3     : in    std_logic_vector (31 downto 0); 
              dato1     : out   std_logic_vector (31 downto 0); 
-             dato2     : out   std_logic_vector (31 downto 0); 
-             we        : in    std_logic);
+             dato2     : out   std_logic_vector (31 downto 0));
    end component;
    
    component ALU
@@ -186,7 +190,9 @@ architecture BEHAVIORAL of Camino is
              mem_to_reg  : out   std_logic; 
              reg_write   : out   std_logic; 
              alu_src     : out   std_logic; 
-             jump        : out   std_logic);
+             jump        : out   std_logic; 
+             lw          : out   std_logic; 
+             sw_out      : out   std_logic);
    end component;
    
    component ExtensorSigno
@@ -279,10 +285,12 @@ begin
    XLXI_6 : MemoriaRegistros
       port map (clk=>mem_reg_clk_DUMMY,
                 dato3(31 downto 0)=>write_data_dato3_DUMMY(31 downto 0),
+                lw=>XLXN_180,
                 rd(4 downto 0)=>mux5b_reg_dst_DUMMY(4 downto 0),
                 reg_write=>XLXN_154,
                 rs(4 downto 0)=>decod_rs_DUMMY(4 downto 0),
                 rt(4 downto 0)=>decod_rt_DUMMY(4 downto 0),
+                sw=>XLXN_181,
                 we=>XLXN_175,
                 dato1(31 downto 0)=>mem_reg_dato1_DUMMY(31 downto 0),
                 dato2(31 downto 0)=>mem_reg_dato2_DUMMY(31 downto 0));
@@ -326,11 +334,13 @@ begin
                 alu_src=>ctrl_alu_src_DUMMY,
                 branch=>ctrl_branch_DUMMY,
                 jump=>XLXN_176,
+                lw=>XLXN_180,
                 mem_read=>ctrl_mem_read_DUMMY,
                 mem_to_reg=>ctrl_mem_to_reg_DUMMY,
                 mem_write=>ctrl_mem_write_DUMMY,
                 reg_destino=>ctrl_reg_dst_DUMMY,
-                reg_write=>XLXN_154);
+                reg_write=>XLXN_154,
+                sw_out=>XLXN_181);
    
    XLXI_19 : ExtensorSigno
       port map (inmediato_in(15 downto 0)=>decod_inmediato_DUMMY(15 downto 0),

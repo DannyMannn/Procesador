@@ -9,6 +9,7 @@ entity MemoriaRegistros is
         rs : in  STD_LOGIC_VECTOR (4 downto 0);
         rt : in  STD_LOGIC_VECTOR (4 downto 0);
         rd : in  STD_LOGIC_VECTOR (4 downto 0);
+		  lw, sw: in STD_LOGIC;
         dato3 : in  STD_LOGIC_VECTOR (31 downto 0);
         dato1 : out  STD_LOGIC_VECTOR (31 downto 0);
         dato2 : out  STD_LOGIC_VECTOR (31 downto 0)
@@ -56,11 +57,33 @@ begin
         end if;
     end process;
     
+	 -- TIPO R
     process (we, rd, reg_write)
     begin
         if (we'event and we='1') then
             if (reg_write = '1') then
                 RAM(conv_integer(rd)) <= dato3;
+            end if;
+        end if;
+    end process;
+	 
+	 -- SW
+	 process (we, rs, sw)
+    begin
+        if (we'event and we='1') then
+            if (sw = '1') then
+                RAM(conv_integer(rs)) <= dato3;
+            end if;
+        end if;
+    end process;
+	 
+	 
+	 -- LW
+	 process (we, rt, lw)
+    begin
+        if (we'event and we='1') then
+            if (lw = '1') then
+                RAM(conv_integer(rt)) <= dato3;
             end if;
         end if;
     end process;

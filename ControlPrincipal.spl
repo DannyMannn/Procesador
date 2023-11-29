@@ -10,4 +10,6 @@ mem_to_reg
 reg_write
 alu_src
 jump
+lw
+sw_out
 [BiDir]

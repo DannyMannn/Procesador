@@ -2,6 +2,8 @@
 clk
 we
 reg_write
+lw
+sw
 =rs[4:0]=
 =rt[4:0]=
 =rd[4:0]=

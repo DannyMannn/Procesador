@@ -20,8 +20,8 @@ Parsing VHDL file "/home/ise/Documents/Procesador/ALU.vhd" into library work
 Parsing VHDL file "/home/ise/Documents/Procesador/Camino.vhf" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 114392 KB
-Fuse CPU Usage: 6490 ms
+Fuse Memory Usage: 114408 KB
+Fuse CPU Usage: 5500 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -47,6 +47,6 @@ Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 35 VHDL Units
 Built simulation executable /home/ise/Documents/Procesador/Camino_isim_beh.exe
-Fuse Memory Usage: 951604 KB
-Fuse CPU Usage: 8130 ms
-GCC CPU Usage: 5900 ms
+Fuse Memory Usage: 951620 KB
+Fuse CPU Usage: 6740 ms
+GCC CPU Usage: 4910 ms

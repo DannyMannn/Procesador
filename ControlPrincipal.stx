@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to /home/ise/Documents/Procesador/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.40 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.27 secs
  
 --> 
 Parameter xsthdpdir set to /home/ise/Documents/Procesador/xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.40 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.27 secs
  
 --> 
 Reading design: ControlPrincipal.prj
@@ -47,13 +47,13 @@ Parsing entity <ControlPrincipal>.
 Parsing architecture <Behavioral> of entity <controlprincipal>.
 
 
-Total REAL time to Xst completion: 33.00 secs
-Total CPU time to Xst completion: 32.35 secs
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 21.77 secs
  
 --> 
 
 
-Total memory usage is 396892 kilobytes
+Total memory usage is 396896 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
